@@ -1,0 +1,2 @@
+source /home/yuzhen/esp/wire_PDM/build/bootloader/gdbinit/symbols
+source /home/yuzhen/esp/wire_PDM/build/bootloader/gdbinit/connect

@@ -230,6 +230,42 @@ static void wifi_init_sta(void)
 // 用于控制录音状态的全局变量
 volatile bool recording = true;
 
+
+// void send_packet(int sock, uint8_t *read_buffer, size_t bytes_read, uint8_t counter) {
+//     // 整个数据包长度固定为 513 字节（512 字节音频数据 + 1 字节计数器）
+//     uint16_t packet_length = 513;
+//     // 将 packet_length 转换为网络字节序（大端格式）
+//     uint16_t net_packet_length = htons(packet_length);
+    
+//     int err = 0;
+    
+//     // 1. 发送2字节包头（表示后续数据包的总长度）
+//     err = send(sock, &net_packet_length, sizeof(net_packet_length), 0);
+//     if (err < 0) {
+//         ESP_LOGE(TAG, "包头发送错误: errno %d", errno);
+//         return;
+//     }
+    
+//     // 2. 发送512字节音频数据
+//     err = send(sock, read_buffer, bytes_read, 0);
+//     if (err < 0) {
+//         ESP_LOGE(TAG, "音频数据发送错误: errno %d", errno);
+//         return;
+//     }
+    
+//     // 3. 发送1字节计数器
+//     err = send(sock, counter, 1, 0);
+//     if (err < 0) {
+//         ESP_LOGE(TAG, "计数器发送错误: errno %d", errno);
+//         return;
+//     }
+    
+//     ESP_LOGI(TAG, "已发送 %d 字节音频数据, counter: %d", bytes_read, counter);
+     
+// }
+
+
+
 // TCP PDM任务：建立 TCP 连接，并读取 PDM 数据后发送到 PC
 static void tcp_pdm_task(void *pvParameters)
 {
@@ -284,19 +320,65 @@ static void tcp_pdm_task(void *pvParameters)
         uint8_t *read_buffer = (uint8_t *)malloc(I2S_READ_BUF_SIZE);
         size_t bytes_read = 0;
 
+        //initialize the counter 
+        uint8_t counter = 0;
         // 持续循环：读取 PDM 数据并通过 TCP 发送
         while (1) {
             if (recording) {
                 esp_err_t ret = i2s_channel_read(rx_chan, read_buffer, I2S_READ_BUF_SIZE, &bytes_read, portMAX_DELAY);
                 if (ret == ESP_OK && bytes_read > 0) {
-                    int err = send(sock, read_buffer, bytes_read, 0);
-                    if (err < 0) {
-                        ESP_LOGE(TAG, "数据发送错误: errno %d", errno);
-                        break;  // 出错后跳出循环，准备重连socket
-                    }
-                    ESP_LOGI(TAG, "已发送 %d 字节数据", bytes_read);
+                    // int err = send(sock, read_buffer, bytes_read, 0);
+                    // if (err < 0) {
+                    //     ESP_LOGE(TAG, "数据发送错误: errno %d", errno);
+                    //     break;  // 出错后跳出循环，准备重连socket
+                    // }
+                    // // ESP_LOGI(TAG, "已发送 %d 字节数据", bytes_read);
+                    
 
-                    err = send()
+                    // //sending the counter
+                    // err = send(sock, &counter, 1, 0);
+                    // if (err < 0) {
+                    //     ESP_LOGE(TAG, "计数器发送错误: errno %d", errno);
+                    //     break;
+                    // }
+                    // ESP_LOGI(TAG, "已发送 %d 字节数据, counter: %d", bytes_read, counter);
+                    // counter++;
+
+
+                    // send_packet(sock, read_buffer, bytes_read, counter);
+                        // 整个数据包长度固定为 513 字节（512 字节音频数据 + 1 字节计数器）
+                    uint16_t packet_length = 513;
+                    // 将 packet_length 转换为网络字节序（大端格式）
+                    uint16_t net_packet_length = htons(packet_length);
+                    
+                    int err = 0;
+                    
+                    // 1. 发送2字节包头（表示后续数据包的总长度）
+                    err = send(sock, &net_packet_length, sizeof(net_packet_length), 0);
+                    if (err < 0) {
+                        ESP_LOGE(TAG, "包头发送错误: errno %d", errno);
+                        return;
+                    }
+                    
+                    // 2. 发送512字节音频数据
+                    err = send(sock, read_buffer, bytes_read, 0);
+                    if (err < 0) {
+                        ESP_LOGE(TAG, "音频数据发送错误: errno %d", errno);
+                        return;
+                    }
+                    
+                    // 3. 发送1字节计数器
+                    err = send(sock, &counter, 1, 0);
+                    if (err < 0) {
+                        ESP_LOGE(TAG, "计数器发送错误: errno %d", errno);
+                        return;
+                    }
+                    
+                    ESP_LOGI(TAG, "已发送 %d 字节音频数据, counter: %d", bytes_read, counter);
+                    // 计数器递增（注意1字节在超过255后会溢出）
+                    counter++;
+
+                     
                 }
             } else {
                 vTaskDelay(100 / portTICK_PERIOD_MS);

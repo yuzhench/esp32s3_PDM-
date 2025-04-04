@@ -613,6 +613,8 @@ _Python3_EXECUTABLE:INTERNAL=/home/yuzhen/.espressif/python_env/idf5.2_py3.8_env
 //Python3 Properties
 _Python3_INTERPRETER_PROPERTIES:INTERNAL=Python;3;8;10;32;;;abi3;/usr/lib/python3.8;/usr/lib/python3.8;/home/yuzhen/.espressif/python_env/idf5.2_py3.8_env/lib/python3.8/site-packages;/home/yuzhen/.espressif/python_env/idf5.2_py3.8_env/lib/python3.8/site-packages
 _Python3_INTERPRETER_SIGNATURE:INTERNAL=c46a1686d8547370af7f46bbb5fe0bed
+//Interpreter reason failure
+_Python3_Interpreter_REASON_FAILURE:INTERNAL=
 //NumPy reason failure
 _Python3_NumPy_REASON_FAILURE:INTERNAL=
 

@@ -1,0 +1,58 @@
+[0;33m--- esp-idf-monitor 1.6.0 on /dev/ttyUSB0 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0;33m--- 0x40048d9d: send_packet in ROM
+[0m
+[0;33m--- 0x40056f5c: memcpy in ROM
+--- 0x40056f72: memcpy in ROM
+[0m
+[0;33m--- 0x40048d9a: send_packet in ROM
+--- 0x420099b1: tcp_pdm_task at /home/yuzhen/esp/PDM_microphone/wifi_send/main/wifi_send.c:349
+--- 0x4037d205: vPortTaskWrapper at /home/yuzhen/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x4037ab96: esp_cpu_wait_for_intr at /home/yuzhen/esp/esp-idf/components/esp_hw_support/cpu.c:145
+[0m
+[0;33m--- 0x40048d9d: send_packet in ROM
+[0m
+[0;33m--- 0x40056f5c: memcpy in ROM
+--- 0x40056f72: memcpy in ROM
+[0m
+[0;33m--- 0x40048d9a: send_packet in ROM
+--- 0x420099b1: tcp_pdm_task at /home/yuzhen/esp/PDM_microphone/wifi_send/main/wifi_send.c:349
+--- 0x4037d205: vPortTaskWrapper at /home/yuzhen/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x4037ab96: esp_cpu_wait_for_intr at /home/yuzhen/esp/esp-idf/components/esp_hw_support/cpu.c:145
+[0m
+[0;33m--- 0x40048d9d: send_packet in ROM
+[0m
+[0;33m--- 0x40056f5c: memcpy in ROM
+--- 0x40056f72: memcpy in ROM
+[0m
+[0;33m--- 0x40048d9a: send_packet in ROM
+--- 0x420099b1: tcp_pdm_task at /home/yuzhen/esp/PDM_microphone/wifi_send/main/wifi_send.c:349
+--- 0x4037d205: vPortTaskWrapper at /home/yuzhen/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x4037ab96: esp_cpu_wait_for_intr at /home/yuzhen/esp/esp-idf/components/esp_hw_support/cpu.c:145
+[0m
+[0;33m--- 0x40048d9d: send_packet in ROM
+[0m
+[0;33m--- 0x40056f5c: memcpy in ROM
+--- 0x40056f72: memcpy in ROM
+[0m
+[0;33m--- 0x40048d9a: send_packet in ROM
+--- 0x420099b1: tcp_pdm_task at /home/yuzhen/esp/PDM_microphone/wifi_send/main/wifi_send.c:349
+--- 0x4037d205: vPortTaskWrapper at /home/yuzhen/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x4037ab96: esp_cpu_wait_for_intr at /home/yuzhen/esp/esp-idf/components/esp_hw_support/cpu.c:145
+[0m
+[0;33m--- 0x40048d9d: send_packet in ROM
+[0m
+[0;33m--- 0x40056f5c: memcpy in ROM
+--- 0x40056f72: memcpy in ROM
+[0m
+[0;33m--- 0x40048d9a: send_packet in ROM
+--- 0x420099b1: tcp_pdm_task at /home/yuzhen/esp/PDM_microphone/wifi_send/main/wifi_send.c:349
+--- 0x4037d205: vPortTaskWrapper at /home/yuzhen/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x4037ab96: esp_cpu_wait_for_intr at /home/yuzhen/esp/esp-idf/components/esp_hw_support/cpu.c:145
+[0m
+[0m

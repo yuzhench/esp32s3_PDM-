@@ -13,8 +13,8 @@ end
 
 # Load bootloader symbols
 set confirm off
-    add-symbol-file /home/yuzhen/esp/wifi_send/build/bootloader/bootloader.elf
+    add-symbol-file /home/yuzhen/esp/PDM_microphone/wifi_send/build/bootloader/bootloader.elf
 set confirm on
 
 # Load application symbols
-file /home/yuzhen/esp/wifi_send/build/wifi_send.elf
+file /home/yuzhen/esp/PDM_microphone/wifi_send/build/wifi_send.elf

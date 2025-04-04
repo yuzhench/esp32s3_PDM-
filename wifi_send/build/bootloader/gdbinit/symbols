@@ -17,4 +17,4 @@ set confirm off
 set confirm on
 
 # Load application symbols
-file /home/yuzhen/esp/wifi_send/build/bootloader/bootloader.elf
+file /home/yuzhen/esp/PDM_microphone/wifi_send/build/bootloader/bootloader.elf

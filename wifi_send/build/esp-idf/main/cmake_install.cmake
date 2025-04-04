@@ -1,4 +1,4 @@
-# Install script for directory: /home/yuzhen/esp/wifi_send/main
+# Install script for directory: /home/yuzhen/esp/PDM_microphone/wifi_send/main
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

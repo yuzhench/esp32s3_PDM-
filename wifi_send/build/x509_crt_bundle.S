@@ -1,4 +1,4 @@
-/* * Data converted from /home/yuzhen/esp/wifi_send/build/esp-idf/mbedtls/x509_crt_bundle
+/* * Data converted from /home/yuzhen/esp/PDM_microphone/wifi_send/build/esp-idf/mbedtls/x509_crt_bundle
  */
 .data
 .section .rodata.embedded

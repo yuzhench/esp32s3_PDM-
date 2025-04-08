@@ -1,0 +1,2 @@
+source /home/yuzhen/esp/PDM_microphone/wifi_multi_send/build/gdbinit/symbols
+source /home/yuzhen/esp/PDM_microphone/wifi_multi_send/build/gdbinit/connect

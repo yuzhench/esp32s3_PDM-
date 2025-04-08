@@ -201,6 +201,7 @@ def bag_513():
     server_socket.close()
 
 import sys, select, termios, tty, struct, wave
+
 def record_WAV_wifi_513():
     HOST = ''          # 监听所有网络接口
     PORT = 1234        # 端口号（需与ESP32端一致）
@@ -234,6 +235,7 @@ def record_WAV_wifi_513():
 
     print("按空格键开始/停止录音，Ctrl+C退出。")
 
+    last_counter = None
     try:
         while True:
             # 同时监听键盘输入和网络数据，等待0.1秒
@@ -274,6 +276,9 @@ def record_WAV_wifi_513():
                     counter = packet[-1]      # 最后1字节：计数器
                     if recording:
                         print("收到音频数据长度：", len(audio_data), "计数器：", counter)
+                        if last_counter != None and counter - last_counter != 1 and counter != 0:
+                            print("warning!!! we lost one package")
+                        last_counter = counter 
                     
                     # 如果处于录音状态，则将音频数据写入WAV文件
                     if recording:
@@ -286,6 +291,12 @@ def record_WAV_wifi_513():
         server_socket.close()
         wf.close()
 
+    #checking the counter: 
+
+
+
+ 
+
 
 if __name__ == '__main__':
     # main()
@@ -293,3 +304,4 @@ if __name__ == '__main__':
     # record_WAV_wifi()
     # bag_513()
     record_WAV_wifi_513()
+ 

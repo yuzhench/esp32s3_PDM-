@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "wifi_send",
-    "project_version":    "3724b69-dirty",
+    "project_version":    "424609d-dirty",
     "project_path":       "/home/yuzhen/esp/PDM_microphone/wifi_send",
     "idf_path":           "/home/yuzhen/esp/esp-idf",
     "build_dir":          "/home/yuzhen/esp/PDM_microphone/wifi_send/build",

@@ -1,0 +1,2244 @@
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3810,len:0x1870
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xcec
+load:0x403cc700,len:0x2ec4
+entry 0x403c9918
+[0;32mI (27) boot: ESP-IDF v5.2.5 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Apr  4 2025 01:23:19[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v0.2[0m
+[0;32mI (34) boot: efuse block revision: v1.3[0m
+[0;32mI (38) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (43) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (52) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (61) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (95) esp_image: segment 0: paddr=00010020 vaddr=3c090020 size=1b034h (110644) map[0m
+[0;32mI (123) esp_image: segment 1: paddr=0002b05c vaddr=3fc99d00 size=04a90h ( 19088) load[0m
+[0;32mI (127) esp_image: segment 2: paddr=0002faf4 vaddr=40374000 size=00524h (  1316) load[0m
+[0;32mI (129) esp_image: segment 3: paddr=00030020 vaddr=42000020 size=84998h (543128) map[0m
+[0;32mI (233) esp_image: segment 4: paddr=000b49c0 vaddr=40374524 size=156f0h ( 87792) load[0m
+[0;32mI (261) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (262) boot: Disabling RNG early entropy source...[0m
+[0;32mI (273) cpu_start: Multicore app[0m
+[0;32mI (283) cpu_start: Pro cpu start user code[0m
+[0;32mI (283) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (283) cpu_start: Application information:[0m
+[0;32mI (286) cpu_start: Project name:     wifi_send[0m
+[0;32mI (291) cpu_start: App version:      3724b69-dirty[0m
+[0;32mI (296) cpu_start: Compile time:     Apr  4 2025 01:30:57[0m
+[0;32mI (302) cpu_start: ELF file SHA256:  717347d01...[0m
+[0;32mI (308) cpu_start: ESP-IDF:          v5.2.5[0m
+[0;32mI (313) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (317) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (322) cpu_start: Chip rev:         v0.2[0m
+[0;32mI (327) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (334) heap_init: At 3FCA2270 len 000474A0 (285 KiB): RAM[0m
+[0;32mI (340) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (346) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (352) heap_init: At 600FE010 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (360) spi_flash: detected chip: gd[0m
+[0;32mI (363) spi_flash: flash io: dio[0m
+[0;33mW (367) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (380) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (387) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (394) main_task: Started on CPU0[0m
+[0;32mI (404) main_task: Calling app_main()[0m
+[0;32mI (424) pp: pp rom version: e7ae62f[0m
+[0;32mI (424) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (434) wifi:wifi driver task: 3fcac574, prio:23, stack:6656, core=0[0m
+[0;32mI (444) wifi:wifi firmware version: 01d22db[0m
+[0;32mI (444) wifi:wifi certification version: v7.0[0m
+[0;32mI (444) wifi:config NVS flash: enabled[0m
+[0;32mI (444) wifi:config nano formating: disabled[0m
+[0;32mI (444) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (454) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (454) wifi:Init management short buffer num: 32[0m
+[0;32mI (454) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (464) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (464) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (474) wifi:Init static rx buffer num: 10[0m
+[0;32mI (474) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (474) wifi_init: rx ba win: 6[0m
+[0;32mI (484) wifi_init: tcpip mbox: 32[0m
+[0;32mI (484) wifi_init: udp mbox: 6[0m
+[0;32mI (494) wifi_init: tcp mbox: 6[0m
+[0;32mI (494) wifi_init: tcp tx win: 5760[0m
+[0;32mI (494) wifi_init: tcp rx win: 5760[0m
+[0;32mI (504) wifi_init: tcp mss: 1440[0m
+[0;32mI (504) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (514) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (514) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (524) phy_init: phy_version 680,a6008b2,Jun  4 2024,16:41:10[0m
+[0;32mI (564) wifi:mode : sta (d8:3b:da:54:54:88)[0m
+[0;32mI (564) wifi:enable tsf[0m
+[0;32mI (564) TCP_PDM_CLIENT: WiFi初始化完毕，正在连接...[0m
+[0;32mI (574) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1[0m
+[0;32mI (584) wifi:state: init -> auth (b0)[0m
+[0;32mI (584) wifi:state: auth -> assoc (0)[0m
+[0;32mI (594) wifi:state: assoc -> run (10)[0m
+[0;32mI (644) wifi:connected with Yuzhen的iPhone, aid = 1, channel 11, BW20, bssid = b6:3d:c9:1d:f5:10[0m
+[0;32mI (644) wifi:security: WPA2-PSK, phy: bgn, rssi: -23[0m
+[0;32mI (644) wifi:pm start, type: 1[0m
+
+[0;32mI (644) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (654) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (714) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (1664) esp_netif_handlers: sta ip: 172.20.10.3, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (1664) TCP_PDM_CLIENT: 获取到IP地址: 172.20.10.3[0m
+[0;32mI (5574) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;32mI (5574) main_task: Returned from app_main()[0m
+[0;32mI (5734) wifi:<ba-add>idx:0 (ifx:0, b6:3d:c9:1d:f5:10), tid:0, ssn:2, winSize:64[0m
+[0;31mE (5754) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (6764) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (6964) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (7964) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (8084) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (9084) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (9314) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (10314) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (10544) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (11544) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (11674) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (12674) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (12904) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (13904) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (13954) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (14954) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (14954) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (15954) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (16174) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (17174) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (17404) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (18404) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (18534) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (19534) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (19764) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (20764) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (21094) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (22094) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (22324) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (23324) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (23344) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (24344) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (24574) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (25574) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (26004) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (27004) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (27234) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (28234) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (28464) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (29464) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (29594) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (30594) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (30644) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (31644) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;32mI (31844) TCP_PDM_CLIENT: 成功连接到 172.20.10.2:1234[0m
+[0;32mI (31864) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 0[0m
+[0;32mI (31884) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 1[0m
+[0;32mI (31894) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 2[0m
+[0;32mI (31914) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 3[0m
+[0;32mI (31924) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 4[0m
+[0;32mI (31944) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 5[0m
+[0;32mI (31964) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 6[0m
+[0;32mI (31974) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 7[0m
+[0;32mI (31994) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 8[0m
+[0;32mI (32004) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 9[0m
+[0;32mI (32024) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 10[0m
+[0;32mI (32044) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 11[0m
+[0;32mI (32054) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 12[0m
+[0;32mI (32074) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 13[0m
+[0;32mI (32084) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 14[0m
+[0;32mI (32104) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 15[0m
+[0;32mI (32124) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 16[0m
+[0;32mI (32134) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 17[0m
+[0;32mI (32154) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 18[0m
+[0;32mI (32164) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 19[0m
+[0;32mI (32184) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 20[0m
+[0;32mI (32204) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 21[0m
+[0;32mI (32214) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 22[0m
+[0;32mI (32234) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 23[0m
+[0;32mI (32244) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 24[0m
+[0;32mI (32264) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 25[0m
+[0;32mI (32284) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 26[0m
+[0;32mI (32294) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 27[0m
+[0;32mI (32314) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 28[0m
+[0;32mI (32324) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 29[0m
+[0;32mI (32344) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 30[0m
+[0;32mI (32364) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 31[0m
+[0;32mI (32374) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 32[0m
+[0;32mI (32394) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 33[0m
+[0;32mI (32404) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 34[0m
+[0;32mI (32424) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 35[0m
+[0;32mI (32444) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 36[0m
+[0;32mI (32454) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 37[0m
+[0;32mI (32474) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 38[0m
+[0;32mI (32484) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 39[0m
+[0;32mI (32504) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 40[0m
+[0;32mI (32524) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 41[0m
+[0;32mI (32534) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 42[0m
+[0;32mI (32554) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 43[0m
+[0;32mI (32564) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 44[0m
+[0;32mI (32584) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 45[0m
+[0;32mI (32604) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 46[0m
+[0;32mI (32614) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 47[0m
+[0;32mI (32634) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 48[0m
+[0;32mI (32644) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 49[0m
+[0;32mI (32664) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 50[0m
+[0;32mI (32684) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 51[0m
+[0;32mI (32694) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 52[0m
+[0;32mI (32714) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 53[0m
+[0;32mI (32724) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 54[0m
+[0;32mI (32744) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 55[0m
+[0;32mI (32764) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 56[0m
+[0;32mI (32774) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 57[0m
+[0;32mI (32794) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 58[0m
+[0;32mI (32804) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 59[0m
+[0;32mI (32824) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 60[0m
+[0;32mI (32844) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 61[0m
+[0;32mI (32854) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 62[0m
+[0;32mI (32874) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 63[0m
+[0;32mI (32884) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 64[0m
+[0;32mI (32904) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 65[0m
+[0;32mI (32924) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 66[0m
+[0;32mI (32934) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 67[0m
+[0;32mI (32954) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 68[0m
+[0;32mI (32964) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 69[0m
+[0;32mI (32984) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 70[0m
+[0;32mI (33004) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 71[0m
+[0;32mI (33014) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 72[0m
+[0;32mI (33034) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 73[0m
+[0;32mI (33044) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 74[0m
+[0;32mI (33064) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 75[0m
+[0;32mI (33084) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 76[0m
+[0;32mI (33094) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 77[0m
+[0;32mI (33114) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 78[0m
+[0;32mI (33124) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 79[0m
+[0;32mI (33144) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 80[0m
+[0;32mI (33164) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 81[0m
+[0;32mI (33174) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 82[0m
+[0;32mI (33194) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 83[0m
+[0;32mI (33204) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 84[0m
+[0;32mI (33224) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 85[0m
+[0;32mI (33244) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 86[0m
+[0;32mI (33254) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 87[0m
+[0;32mI (33274) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 88[0m
+[0;32mI (33284) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 89[0m
+[0;32mI (33304) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 90[0m
+[0;32mI (33324) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 91[0m
+[0;32mI (33334) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 92[0m
+[0;32mI (33354) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 93[0m
+[0;32mI (33364) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 94[0m
+[0;32mI (33384) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 95[0m
+[0;32mI (33404) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 96[0m
+[0;32mI (33414) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 97[0m
+[0;32mI (33434) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 98[0m
+[0;32mI (33444) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 99[0m
+[0;32mI (33464) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 100[0m
+[0;32mI (33484) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 101[0m
+[0;32mI (33494) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 102[0m
+[0;32mI (33514) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 103[0m
+[0;32mI (33524) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 104[0m
+[0;32mI (33544) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 105[0m
+[0;32mI (33564) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 106[0m
+[0;32mI (33574) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 107[0m
+[0;32mI (33594) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 108[0m
+[0;32mI (33604) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 109[0m
+[0;32mI (33624) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 110[0m
+[0;32mI (33644) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 111[0m
+[0;32mI (33654) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 112[0m
+[0;32mI (33674) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 113[0m
+[0;32mI (33684) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 114[0m
+[0;32mI (33704) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 115[0m
+[0;32mI (33724) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 116[0m
+[0;32mI (33734) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 117[0m
+[0;32mI (33754) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 118[0m
+[0;32mI (33764) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 119[0m
+[0;32mI (33784) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 120[0m
+[0;32mI (33804) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 121[0m
+[0;32mI (33814) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 122[0m
+[0;32mI (33834) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 123[0m
+[0;32mI (33844) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 124[0m
+[0;32mI (33864) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 125[0m
+[0;32mI (33884) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 126[0m
+[0;32mI (33894) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 127[0m
+[0;32mI (33914) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 128[0m
+[0;32mI (33924) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 129[0m
+[0;32mI (33944) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 130[0m
+[0;32mI (33964) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 131[0m
+[0;32mI (33974) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 132[0m
+[0;32mI (33994) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 133[0m
+[0;32mI (34004) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 134[0m
+[0;32mI (34024) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 135[0m
+[0;32mI (34044) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 136[0m
+[0;32mI (34054) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 137[0m
+[0;32mI (34074) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 138[0m
+[0;32mI (34084) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 139[0m
+[0;32mI (34104) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 140[0m
+[0;32mI (34124) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 141[0m
+[0;32mI (34134) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 142[0m
+[0;32mI (34154) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 143[0m
+[0;32mI (34164) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 144[0m
+[0;32mI (34184) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 145[0m
+[0;32mI (34204) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 146[0m
+[0;32mI (34214) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 147[0m
+[0;32mI (34234) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 148[0m
+[0;32mI (34244) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 149[0m
+[0;32mI (34264) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 150[0m
+[0;32mI (34284) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 151[0m
+[0;32mI (34294) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 152[0m
+[0;32mI (34314) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 153[0m
+[0;32mI (34324) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 154[0m
+[0;32mI (34344) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 155[0m
+[0;32mI (34364) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 156[0m
+[0;32mI (34374) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 157[0m
+[0;32mI (34394) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 158[0m
+[0;32mI (34404) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 159[0m
+[0;32mI (34424) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 160[0m
+[0;32mI (34444) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 161[0m
+[0;32mI (34454) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 162[0m
+[0;32mI (34474) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 163[0m
+[0;32mI (34484) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 164[0m
+[0;32mI (34504) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 165[0m
+[0;32mI (34524) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 166[0m
+[0;32mI (34534) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 167[0m
+[0;32mI (34554) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 168[0m
+[0;32mI (34564) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 169[0m
+[0;32mI (34584) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 170[0m
+[0;32mI (34604) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 171[0m
+[0;32mI (34614) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 172[0m
+[0;32mI (34634) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 173[0m
+[0;32mI (34644) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 174[0m
+[0;32mI (34664) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 175[0m
+[0;32mI (34684) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 176[0m
+[0;32mI (34694) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 177[0m
+[0;32mI (34714) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 178[0m
+[0;32mI (34724) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 179[0m
+[0;32mI (34744) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 180[0m
+[0;32mI (34764) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 181[0m
+[0;32mI (34774) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 182[0m
+[0;32mI (34794) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 183[0m
+[0;32mI (34804) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 184[0m
+[0;32mI (34824) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 185[0m
+[0;32mI (34844) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 186[0m
+[0;32mI (34854) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 187[0m
+[0;32mI (34874) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 188[0m
+[0;32mI (34884) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 189[0m
+[0;32mI (34904) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 190[0m
+[0;32mI (34924) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 191[0m
+[0;32mI (34934) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 192[0m
+[0;32mI (34954) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 193[0m
+[0;32mI (34964) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 194[0m
+[0;32mI (34984) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 195[0m
+[0;32mI (35004) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 196[0m
+[0;32mI (35014) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 197[0m
+[0;32mI (35034) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 198[0m
+[0;32mI (35044) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 199[0m
+[0;32mI (35064) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 200[0m
+[0;32mI (35084) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 201[0m
+[0;32mI (35094) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 202[0m
+[0;32mI (35114) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 203[0m
+[0;32mI (35124) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 204[0m
+[0;32mI (35144) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 205[0m
+[0;32mI (35164) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 206[0m
+[0;32mI (35174) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 207[0m
+[0;32mI (35194) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 208[0m
+[0;32mI (35204) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 209[0m
+[0;32mI (35224) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 210[0m
+[0;32mI (35244) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 211[0m
+[0;32mI (35254) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 212[0m
+[0;32mI (35274) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 213[0m
+[0;32mI (35284) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 214[0m
+[0;32mI (35304) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 215[0m
+[0;32mI (35324) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 216[0m
+[0;32mI (35334) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 217[0m
+[0;32mI (35354) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 218[0m
+[0;32mI (35364) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 219[0m
+[0;32mI (35384) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 220[0m
+[0;32mI (35404) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 221[0m
+[0;32mI (35414) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 222[0m
+[0;32mI (35434) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 223[0m
+[0;32mI (35444) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 224[0m
+[0;32mI (35464) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 225[0m
+[0;32mI (35484) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 226[0m
+[0;32mI (35494) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 227[0m
+[0;32mI (35514) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 228[0m
+[0;32mI (35524) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 229[0m
+[0;32mI (35544) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 230[0m
+[0;32mI (35564) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 231[0m
+[0;32mI (35574) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 232[0m
+[0;32mI (35594) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 233[0m
+[0;32mI (35604) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 234[0m
+[0;32mI (35624) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 235[0m
+[0;32mI (35644) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 236[0m
+[0;32mI (35654) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 237[0m
+[0;32mI (35674) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 238[0m
+[0;32mI (35684) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 239[0m
+[0;32mI (35704) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 240[0m
+[0;32mI (35724) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 241[0m
+[0;32mI (35734) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 242[0m
+[0;32mI (35754) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 243[0m
+[0;32mI (35764) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 244[0m
+[0;32mI (35784) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 245[0m
+[0;32mI (35804) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 246[0m
+[0;32mI (35814) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 247[0m
+[0;32mI (35834) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 248[0m
+[0;32mI (35844) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 249[0m
+[0;32mI (35864) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 250[0m
+[0;32mI (35884) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 251[0m
+[0;32mI (35894) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 252[0m
+[0;32mI (35914) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 253[0m
+[0;32mI (35924) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 254[0m
+[0;32mI (35944) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 255[0m
+[0;32mI (35964) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 0[0m
+[0;32mI (35974) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 1[0m
+[0;32mI (35994) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 2[0m
+[0;32mI (36004) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 3[0m
+[0;32mI (36024) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 4[0m
+[0;32mI (36044) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 5[0m
+[0;32mI (36054) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 6[0m
+[0;32mI (36074) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 7[0m
+[0;32mI (36084) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 8[0m
+[0;32mI (36104) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 9[0m
+[0;32mI (36354) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 10[0m
+[0;32mI (36354) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 11[0m
+[0;32mI (36354) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 12[0m
+[0;32mI (36364) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 13[0m
+[0;32mI (36374) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 14[0m
+[0;32mI (36374) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 15[0m
+[0;32mI (36394) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 16[0m
+[0;32mI (36404) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 17[0m
+[0;32mI (36424) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 18[0m
+[0;32mI (36444) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 19[0m
+[0;32mI (36454) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 20[0m
+[0;32mI (36474) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 21[0m
+[0;32mI (36484) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 22[0m
+[0;32mI (36504) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 23[0m
+[0;32mI (36524) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 24[0m
+[0;32mI (36534) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 25[0m
+[0;32mI (36554) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 26[0m
+[0;32mI (36564) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 27[0m
+[0;32mI (36584) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 28[0m
+[0;32mI (36604) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 29[0m
+[0;32mI (36614) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 30[0m
+[0;32mI (36634) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 31[0m
+[0;32mI (36644) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 32[0m
+[0;32mI (36664) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 33[0m
+[0;32mI (36684) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 34[0m
+[0;32mI (36694) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 35[0m
+[0;32mI (36714) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 36[0m
+[0;32mI (36724) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 37[0m
+[0;32mI (36744) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 38[0m
+[0;32mI (36764) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 39[0m
+[0;32mI (36774) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 40[0m
+[0;32mI (36794) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 41[0m
+[0;32mI (36804) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 42[0m
+[0;32mI (36824) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 43[0m
+[0;32mI (36844) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 44[0m
+[0;32mI (36854) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 45[0m
+[0;32mI (36874) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 46[0m
+[0;32mI (36884) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 47[0m
+[0;32mI (36904) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 48[0m
+[0;32mI (36924) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 49[0m
+[0;32mI (36934) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 50[0m
+[0;32mI (36954) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 51[0m
+[0;32mI (36964) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 52[0m
+[0;32mI (36984) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 53[0m
+[0;32mI (37004) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 54[0m
+[0;32mI (37014) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 55[0m
+[0;32mI (37034) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 56[0m
+[0;32mI (37044) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 57[0m
+[0;32mI (37064) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 58[0m
+[0;32mI (37084) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 59[0m
+[0;32mI (37094) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 60[0m
+[0;32mI (37114) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 61[0m
+[0;32mI (37124) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 62[0m
+[0;32mI (37144) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 63[0m
+[0;32mI (37164) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 64[0m
+[0;32mI (37174) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 65[0m
+[0;32mI (37194) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 66[0m
+[0;32mI (37204) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 67[0m
+[0;32mI (37224) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 68[0m
+[0;32mI (37244) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 69[0m
+[0;32mI (37254) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 70[0m
+[0;32mI (37274) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 71[0m
+[0;32mI (37284) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 72[0m
+[0;32mI (37304) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 73[0m
+[0;32mI (37324) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 74[0m
+[0;32mI (37334) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 75[0m
+[0;32mI (37354) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 76[0m
+[0;32mI (37364) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 77[0m
+[0;32mI (37384) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 78[0m
+[0;32mI (37404) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 79[0m
+[0;32mI (37414) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 80[0m
+[0;32mI (37434) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 81[0m
+[0;32mI (37444) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 82[0m
+[0;32mI (37464) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 83[0m
+[0;32mI (37484) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 84[0m
+[0;32mI (37494) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 85[0m
+[0;32mI (37514) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 86[0m
+[0;32mI (37524) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 87[0m
+[0;32mI (37544) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 88[0m
+[0;32mI (37564) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 89[0m
+[0;32mI (37574) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 90[0m
+[0;32mI (37594) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 91[0m
+[0;32mI (37604) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 92[0m
+[0;32mI (37624) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 93[0m
+[0;32mI (37644) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 94[0m
+[0;32mI (37654) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 95[0m
+[0;32mI (37674) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 96[0m
+[0;32mI (37684) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 97[0m
+[0;32mI (37704) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 98[0m
+[0;32mI (37724) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 99[0m
+[0;32mI (37734) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 100[0m
+[0;32mI (37754) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 101[0m
+[0;32mI (37764) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 102[0m
+[0;32mI (37784) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 103[0m
+[0;32mI (37804) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 104[0m
+[0;32mI (37814) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 105[0m
+[0;32mI (37834) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 106[0m
+[0;32mI (37844) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 107[0m
+[0;32mI (37864) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 108[0m
+[0;32mI (37884) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 109[0m
+[0;32mI (37894) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 110[0m
+[0;32mI (37914) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 111[0m
+[0;32mI (37924) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 112[0m
+[0;32mI (37944) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 113[0m
+[0;32mI (37964) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 114[0m
+[0;32mI (37974) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 115[0m
+[0;32mI (37994) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 116[0m
+[0;32mI (38004) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 117[0m
+[0;32mI (38024) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 118[0m
+[0;32mI (38044) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 119[0m
+[0;32mI (38054) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 120[0m
+[0;32mI (38074) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 121[0m
+[0;32mI (38084) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 122[0m
+[0;32mI (38104) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 123[0m
+[0;32mI (38124) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 124[0m
+[0;32mI (38134) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 125[0m
+[0;32mI (38154) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 126[0m
+[0;32mI (38164) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 127[0m
+[0;32mI (38184) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 128[0m
+[0;32mI (38204) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 129[0m
+[0;32mI (38214) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 130[0m
+[0;32mI (38234) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 131[0m
+[0;32mI (38244) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 132[0m
+[0;32mI (38264) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 133[0m
+[0;32mI (38284) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 134[0m
+[0;32mI (38294) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 135[0m
+[0;32mI (38314) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 136[0m
+[0;32mI (38324) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 137[0m
+[0;32mI (38344) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 138[0m
+[0;32mI (38364) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 139[0m
+[0;32mI (38374) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 140[0m
+[0;32mI (38394) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 141[0m
+[0;32mI (38404) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 142[0m
+[0;32mI (38424) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 143[0m
+[0;32mI (38444) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 144[0m
+[0;32mI (38454) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 145[0m
+[0;32mI (38474) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 146[0m
+[0;32mI (38484) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 147[0m
+[0;32mI (38504) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 148[0m
+[0;32mI (38524) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 149[0m
+[0;32mI (38534) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 150[0m
+[0;32mI (38554) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 151[0m
+[0;32mI (38564) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 152[0m
+[0;32mI (38584) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 153[0m
+[0;32mI (38604) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 154[0m
+[0;32mI (38614) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 155[0m
+[0;32mI (38634) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 156[0m
+[0;32mI (38644) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 157[0m
+[0;32mI (38664) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 158[0m
+[0;32mI (38684) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 159[0m
+[0;32mI (38694) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 160[0m
+[0;32mI (38714) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 161[0m
+[0;32mI (38724) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 162[0m
+[0;32mI (38744) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 163[0m
+[0;32mI (38764) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 164[0m
+[0;32mI (38774) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 165[0m
+[0;32mI (38794) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 166[0m
+[0;32mI (38804) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 167[0m
+[0;32mI (38824) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 168[0m
+[0;32mI (38844) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 169[0m
+[0;32mI (38854) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 170[0m
+[0;32mI (38874) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 171[0m
+[0;32mI (38884) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 172[0m
+[0;32mI (38904) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 173[0m
+[0;32mI (38924) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 174[0m
+[0;32mI (38934) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 175[0m
+[0;32mI (38954) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 176[0m
+[0;32mI (38964) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 177[0m
+[0;32mI (38984) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 178[0m
+[0;32mI (39004) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 179[0m
+[0;32mI (39014) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 180[0m
+[0;32mI (39034) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 181[0m
+[0;32mI (39044) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 182[0m
+[0;32mI (39064) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 183[0m
+[0;32mI (39084) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 184[0m
+[0;32mI (39094) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 185[0m
+[0;32mI (39114) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 186[0m
+[0;32mI (39124) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 187[0m
+[0;32mI (39144) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 188[0m
+[0;32mI (39164) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 189[0m
+[0;32mI (39174) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 190[0m
+[0;32mI (39194) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 191[0m
+[0;32mI (39204) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 192[0m
+[0;32mI (39224) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 193[0m
+[0;32mI (39244) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 194[0m
+[0;32mI (39254) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 195[0m
+[0;32mI (39274) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 196[0m
+[0;32mI (39284) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 197[0m
+[0;32mI (39304) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 198[0m
+[0;32mI (39324) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 199[0m
+[0;32mI (39334) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 200[0m
+[0;32mI (39354) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 201[0m
+[0;32mI (39364) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 202[0m
+[0;32mI (39384) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 203[0m
+[0;32mI (39404) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 204[0m
+[0;32mI (39414) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 205[0m
+[0;32mI (39434) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 206[0m
+[0;32mI (39444) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 207[0m
+[0;32mI (39464) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 208[0m
+[0;32mI (39484) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 209[0m
+[0;32mI (39494) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 210[0m
+[0;32mI (39514) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 211[0m
+[0;32mI (39524) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 212[0m
+[0;32mI (39544) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 213[0m
+[0;32mI (39564) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 214[0m
+[0;32mI (39574) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 215[0m
+[0;32mI (39594) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 216[0m
+[0;32mI (39604) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 217[0m
+[0;32mI (39624) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 218[0m
+[0;32mI (39644) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 219[0m
+[0;32mI (39654) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 220[0m
+[0;32mI (39674) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 221[0m
+[0;32mI (39684) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 222[0m
+[0;32mI (39704) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 223[0m
+[0;32mI (39724) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 224[0m
+[0;32mI (39734) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 225[0m
+[0;32mI (39754) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 226[0m
+[0;32mI (39764) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 227[0m
+[0;32mI (39784) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 228[0m
+[0;32mI (39804) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 229[0m
+[0;32mI (39814) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 230[0m
+[0;32mI (39834) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 231[0m
+[0;32mI (39844) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 232[0m
+[0;32mI (39864) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 233[0m
+[0;32mI (39884) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 234[0m
+[0;32mI (39894) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 235[0m
+[0;32mI (39914) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 236[0m
+[0;32mI (39924) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 237[0m
+[0;32mI (39944) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 238[0m
+[0;32mI (39964) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 239[0m
+[0;32mI (39974) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 240[0m
+[0;32mI (39994) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 241[0m
+[0;32mI (40004) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 242[0m
+[0;32mI (40024) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 243[0m
+[0;32mI (40044) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 244[0m
+[0;32mI (40054) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 245[0m
+[0;32mI (40074) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 246[0m
+[0;32mI (40084) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 247[0m
+[0;32mI (40104) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 248[0m
+[0;32mI (40124) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 249[0m
+[0;32mI (40134) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 250[0m
+[0;32mI (40154) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 251[0m
+[0;32mI (40164) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 252[0m
+[0;32mI (40184) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 253[0m
+[0;32mI (40204) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 254[0m
+[0;32mI (40214) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 255[0m
+[0;32mI (40234) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 0[0m
+[0;32mI (40244) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 1[0m
+[0;32mI (40264) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 2[0m
+[0;32mI (40284) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 3[0m
+[0;32mI (40294) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 4[0m
+[0;32mI (40314) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 5[0m
+[0;32mI (40324) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 6[0m
+[0;32mI (40344) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 7[0m
+[0;32mI (40364) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 8[0m
+[0;32mI (40374) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 9[0m
+[0;32mI (40394) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 10[0m
+[0;32mI (40404) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 11[0m
+[0;32mI (40424) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 12[0m
+[0;32mI (40444) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 13[0m
+[0;32mI (40454) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 14[0m
+[0;32mI (40474) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 15[0m
+[0;32mI (40484) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 16[0m
+[0;32mI (40504) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 17[0m
+[0;32mI (40524) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 18[0m
+[0;32mI (40534) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 19[0m
+[0;32mI (40554) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 20[0m
+[0;32mI (40564) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 21[0m
+[0;32mI (40584) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 22[0m
+[0;32mI (40604) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 23[0m
+[0;32mI (40614) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 24[0m
+[0;32mI (40634) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 25[0m
+[0;32mI (40644) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 26[0m
+[0;32mI (40664) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 27[0m
+[0;32mI (40684) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 28[0m
+[0;32mI (40694) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 29[0m
+[0;32mI (40714) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 30[0m
+[0;32mI (40724) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 31[0m
+[0;32mI (40744) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 32[0m
+[0;32mI (40764) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 33[0m
+[0;32mI (40774) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 34[0m
+[0;32mI (40794) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 35[0m
+[0;32mI (40804) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 36[0m
+[0;32mI (40824) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 37[0m
+[0;32mI (40844) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 38[0m
+[0;32mI (40854) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 39[0m
+[0;32mI (40874) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 40[0m
+[0;32mI (40884) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 41[0m
+[0;32mI (40904) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 42[0m
+[0;32mI (40924) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 43[0m
+[0;32mI (40934) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 44[0m
+[0;32mI (40954) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 45[0m
+[0;32mI (40964) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 46[0m
+[0;32mI (40984) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 47[0m
+[0;32mI (41004) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 48[0m
+[0;32mI (41014) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 49[0m
+[0;32mI (41034) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 50[0m
+[0;32mI (41044) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 51[0m
+[0;32mI (41064) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 52[0m
+[0;32mI (41084) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 53[0m
+[0;32mI (41094) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 54[0m
+[0;32mI (41114) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 55[0m
+[0;32mI (41124) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 56[0m
+[0;32mI (41144) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 57[0m
+[0;32mI (41164) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 58[0m
+[0;32mI (41174) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 59[0m
+[0;32mI (41194) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 60[0m
+[0;32mI (41204) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 61[0m
+[0;32mI (41224) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 62[0m
+[0;32mI (41244) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 63[0m
+[0;32mI (41254) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 64[0m
+[0;32mI (41274) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 65[0m
+[0;32mI (41284) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 66[0m
+[0;32mI (41304) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 67[0m
+[0;32mI (41324) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 68[0m
+[0;32mI (41334) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 69[0m
+[0;32mI (41354) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 70[0m
+[0;32mI (41364) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 71[0m
+[0;32mI (41384) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 72[0m
+[0;32mI (41404) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 73[0m
+[0;32mI (41414) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 74[0m
+[0;32mI (41434) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 75[0m
+[0;32mI (41444) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 76[0m
+[0;32mI (41464) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 77[0m
+[0;32mI (41484) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 78[0m
+[0;32mI (41494) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 79[0m
+[0;32mI (41514) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 80[0m
+[0;32mI (41524) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 81[0m
+[0;32mI (41544) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 82[0m
+[0;32mI (41564) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 83[0m
+[0;32mI (41574) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 84[0m
+[0;32mI (41594) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 85[0m
+[0;32mI (41604) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 86[0m
+[0;32mI (41624) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 87[0m
+[0;32mI (41644) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 88[0m
+[0;32mI (41654) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 89[0m
+[0;32mI (41674) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 90[0m
+[0;32mI (41684) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 91[0m
+[0;32mI (41704) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 92[0m
+[0;32mI (41724) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 93[0m
+[0;32mI (41734) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 94[0m
+[0;32mI (41754) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 95[0m
+[0;32mI (41764) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 96[0m
+[0;32mI (41784) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 97[0m
+[0;32mI (41804) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 98[0m
+[0;32mI (41814) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 99[0m
+[0;32mI (41834) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 100[0m
+[0;32mI (41844) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 101[0m
+[0;32mI (41864) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 102[0m
+[0;32mI (41884) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 103[0m
+[0;32mI (41894) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 104[0m
+[0;32mI (41914) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 105[0m
+[0;32mI (41924) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 106[0m
+[0;32mI (41944) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 107[0m
+[0;32mI (41964) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 108[0m
+[0;32mI (41974) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 109[0m
+[0;32mI (41994) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 110[0m
+[0;32mI (42004) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 111[0m
+[0;32mI (42024) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 112[0m
+[0;32mI (42044) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 113[0m
+[0;32mI (42054) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 114[0m
+[0;32mI (42074) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 115[0m
+[0;32mI (42084) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 116[0m
+[0;32mI (42104) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 117[0m
+[0;32mI (42124) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 118[0m
+[0;32mI (42134) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 119[0m
+[0;32mI (42154) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 120[0m
+[0;32mI (42164) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 121[0m
+[0;32mI (42184) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 122[0m
+[0;32mI (42204) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 123[0m
+[0;32mI (42214) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 124[0m
+[0;32mI (42234) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 125[0m
+[0;32mI (42244) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 126[0m
+[0;32mI (42264) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 127[0m
+[0;32mI (42284) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 128[0m
+[0;32mI (42294) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 129[0m
+[0;32mI (42314) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 130[0m
+[0;32mI (42324) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 131[0m
+[0;32mI (42344) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 132[0m
+[0;32mI (42364) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 133[0m
+[0;32mI (42374) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 134[0m
+[0;32mI (42394) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 135[0m
+[0;32mI (42404) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 136[0m
+[0;32mI (42424) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 137[0m
+[0;32mI (42444) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 138[0m
+[0;32mI (42454) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 139[0m
+[0;32mI (42474) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 140[0m
+[0;32mI (42484) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 141[0m
+[0;32mI (42504) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 142[0m
+[0;32mI (42524) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 143[0m
+[0;32mI (42534) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 144[0m
+[0;32mI (42554) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 145[0m
+[0;32mI (42564) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 146[0m
+[0;32mI (42584) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 147[0m
+[0;32mI (42604) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 148[0m
+[0;32mI (42614) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 149[0m
+[0;32mI (42634) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 150[0m
+[0;32mI (42644) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 151[0m
+[0;32mI (42664) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 152[0m
+[0;32mI (42684) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 153[0m
+[0;32mI (42694) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 154[0m
+[0;32mI (42714) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 155[0m
+[0;32mI (42724) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 156[0m
+[0;32mI (42744) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 157[0m
+[0;32mI (42764) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 158[0m
+[0;32mI (42774) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 159[0m
+[0;32mI (42794) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 160[0m
+[0;32mI (42804) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 161[0m
+[0;32mI (42824) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 162[0m
+[0;32mI (42844) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 163[0m
+[0;32mI (42854) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 164[0m
+[0;32mI (42874) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 165[0m
+[0;32mI (42884) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 166[0m
+[0;32mI (42904) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 167[0m
+[0;32mI (42924) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 168[0m
+[0;32mI (42934) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 169[0m
+[0;32mI (42954) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 170[0m
+[0;32mI (42964) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 171[0m
+[0;32mI (42984) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 172[0m
+[0;32mI (43004) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 173[0m
+[0;32mI (43014) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 174[0m
+[0;32mI (43034) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 175[0m
+[0;32mI (43044) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 176[0m
+[0;32mI (43064) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 177[0m
+[0;32mI (43084) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 178[0m
+[0;32mI (43094) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 179[0m
+[0;32mI (43114) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 180[0m
+[0;32mI (43124) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 181[0m
+[0;32mI (43144) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 182[0m
+[0;32mI (43164) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 183[0m
+[0;32mI (43174) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 184[0m
+[0;32mI (43194) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 185[0m
+[0;32mI (43204) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 186[0m
+[0;32mI (43224) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 187[0m
+[0;32mI (43244) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 188[0m
+[0;32mI (43254) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 189[0m
+[0;32mI (43274) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 190[0m
+[0;32mI (43284) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 191[0m
+[0;32mI (43304) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 192[0m
+[0;32mI (43324) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 193[0m
+[0;32mI (43334) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 194[0m
+[0;32mI (43354) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 195[0m
+[0;32mI (43364) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 196[0m
+[0;32mI (43384) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 197[0m
+[0;32mI (43404) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 198[0m
+[0;32mI (43414) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 199[0m
+[0;32mI (43434) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 200[0m
+[0;32mI (43444) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 201[0m
+[0;32mI (43464) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 202[0m
+[0;32mI (43484) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 203[0m
+[0;32mI (43494) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 204[0m
+[0;32mI (43514) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 205[0m
+[0;32mI (43524) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 206[0m
+[0;32mI (43544) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 207[0m
+[0;32mI (43564) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 208[0m
+[0;32mI (43574) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 209[0m
+[0;32mI (43594) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 210[0m
+[0;32mI (43604) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 211[0m
+[0;32mI (43624) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 212[0m
+[0;32mI (43644) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 213[0m
+[0;32mI (43654) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 214[0m
+[0;32mI (43674) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 215[0m
+[0;32mI (43684) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 216[0m
+[0;32mI (43704) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 217[0m
+[0;32mI (43724) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 218[0m
+[0;32mI (43734) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 219[0m
+[0;32mI (43754) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 220[0m
+[0;32mI (43764) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 221[0m
+[0;32mI (43784) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 222[0m
+[0;32mI (43804) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 223[0m
+[0;32mI (43814) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 224[0m
+[0;32mI (43834) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 225[0m
+[0;32mI (43844) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 226[0m
+[0;32mI (43864) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 227[0m
+[0;32mI (43884) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 228[0m
+[0;32mI (43894) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 229[0m
+[0;32mI (43914) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 230[0m
+[0;32mI (43924) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 231[0m
+[0;32mI (43944) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 232[0m
+[0;32mI (43964) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 233[0m
+[0;32mI (43974) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 234[0m
+[0;32mI (43994) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 235[0m
+[0;32mI (44004) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 236[0m
+[0;32mI (44024) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 237[0m
+[0;32mI (44044) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 238[0m
+[0;32mI (44054) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 239[0m
+[0;32mI (44074) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 240[0m
+[0;32mI (44084) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 241[0m
+[0;32mI (44104) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 242[0m
+[0;32mI (44124) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 243[0m
+[0;32mI (44134) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 244[0m
+[0;32mI (44154) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 245[0m
+[0;32mI (44164) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 246[0m
+[0;32mI (44184) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 247[0m
+[0;32mI (44204) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 248[0m
+[0;32mI (44214) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 249[0m
+[0;32mI (44234) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 250[0m
+[0;32mI (44244) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 251[0m
+[0;32mI (44264) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 252[0m
+[0;32mI (44284) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 253[0m
+[0;32mI (44294) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 254[0m
+[0;32mI (44314) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 255[0m
+[0;32mI (44324) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 0[0m
+[0;32mI (44344) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 1[0m
+[0;32mI (44364) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 2[0m
+[0;32mI (44374) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 3[0m
+[0;32mI (44394) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 4[0m
+[0;32mI (44404) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 5[0m
+[0;32mI (44424) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 6[0m
+[0;32mI (44444) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 7[0m
+[0;32mI (44454) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 8[0m
+[0;32mI (44474) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 9[0m
+[0;32mI (44484) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 10[0m
+[0;32mI (44504) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 11[0m
+[0;32mI (44524) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 12[0m
+[0;32mI (44534) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 13[0m
+[0;32mI (44554) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 14[0m
+[0;32mI (44564) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 15[0m
+[0;32mI (44584) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 16[0m
+[0;32mI (44604) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 17[0m
+[0;32mI (44614) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 18[0m
+[0;32mI (44634) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 19[0m
+[0;32mI (44644) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 20[0m
+[0;32mI (44664) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 21[0m
+[0;32mI (44684) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 22[0m
+[0;32mI (44694) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 23[0m
+[0;32mI (44714) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 24[0m
+[0;32mI (44724) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 25[0m
+[0;32mI (44744) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 26[0m
+[0;32mI (44764) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 27[0m
+[0;32mI (44774) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 28[0m
+[0;32mI (44794) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 29[0m
+[0;32mI (44804) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 30[0m
+[0;32mI (44824) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 31[0m
+[0;32mI (44844) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 32[0m
+[0;32mI (44854) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 33[0m
+[0;32mI (44874) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 34[0m
+[0;32mI (44884) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 35[0m
+[0;32mI (44904) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 36[0m
+[0;32mI (44924) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 37[0m
+[0;32mI (44934) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 38[0m
+[0;32mI (44954) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 39[0m
+[0;32mI (44964) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 40[0m
+[0;32mI (44984) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 41[0m
+[0;32mI (45004) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 42[0m
+[0;32mI (45014) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 43[0m
+[0;32mI (45034) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 44[0m
+[0;32mI (45044) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 45[0m
+[0;32mI (45064) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 46[0m
+[0;32mI (45084) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 47[0m
+[0;32mI (45094) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 48[0m
+[0;32mI (45114) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 49[0m
+[0;32mI (45124) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 50[0m
+[0;32mI (45144) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 51[0m
+[0;32mI (45164) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 52[0m
+[0;32mI (45174) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 53[0m
+[0;32mI (45194) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 54[0m
+[0;32mI (45204) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 55[0m
+[0;32mI (45224) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 56[0m
+[0;32mI (45244) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 57[0m
+[0;32mI (45254) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 58[0m
+[0;32mI (45274) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 59[0m
+[0;32mI (45284) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 60[0m
+[0;32mI (45304) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 61[0m
+[0;32mI (45324) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 62[0m
+[0;32mI (45334) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 63[0m
+[0;32mI (45354) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 64[0m
+[0;32mI (45364) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 65[0m
+[0;32mI (45384) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 66[0m
+[0;32mI (45404) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 67[0m
+[0;32mI (45414) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 68[0m
+[0;32mI (45434) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 69[0m
+[0;32mI (45444) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 70[0m
+[0;32mI (45464) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 71[0m
+[0;32mI (45484) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 72[0m
+[0;32mI (45494) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 73[0m
+[0;32mI (45514) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 74[0m
+[0;32mI (45524) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 75[0m
+[0;32mI (45544) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 76[0m
+[0;32mI (45564) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 77[0m
+[0;32mI (45574) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 78[0m
+[0;32mI (45594) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 79[0m
+[0;32mI (45604) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 80[0m
+[0;32mI (45624) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 81[0m
+[0;32mI (45644) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 82[0m
+[0;32mI (45654) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 83[0m
+[0;32mI (45674) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 84[0m
+[0;32mI (45684) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 85[0m
+[0;32mI (45704) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 86[0m
+[0;32mI (45724) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 87[0m
+[0;32mI (45734) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 88[0m
+[0;32mI (45754) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 89[0m
+[0;32mI (45764) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 90[0m
+[0;32mI (45784) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 91[0m
+[0;32mI (45804) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 92[0m
+[0;32mI (45814) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 93[0m
+[0;32mI (45834) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 94[0m
+[0;32mI (45844) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 95[0m
+[0;32mI (45864) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 96[0m
+[0;32mI (45884) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 97[0m
+[0;32mI (45894) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 98[0m
+[0;32mI (45914) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 99[0m
+[0;32mI (45924) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 100[0m
+[0;32mI (45944) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 101[0m
+[0;32mI (45964) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 102[0m
+[0;32mI (45974) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 103[0m
+[0;32mI (45994) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 104[0m
+[0;32mI (46004) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 105[0m
+[0;32mI (46024) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 106[0m
+[0;32mI (46044) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 107[0m
+[0;32mI (46054) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 108[0m
+[0;32mI (46074) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 109[0m
+[0;32mI (46084) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 110[0m
+[0;32mI (46104) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 111[0m
+[0;32mI (46124) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 112[0m
+[0;32mI (46134) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 113[0m
+[0;32mI (46154) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 114[0m
+[0;32mI (46164) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 115[0m
+[0;32mI (46184) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 116[0m
+[0;32mI (46204) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 117[0m
+[0;32mI (46214) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 118[0m
+[0;32mI (46234) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 119[0m
+[0;32mI (46244) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 120[0m
+[0;32mI (46264) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 121[0m
+[0;32mI (46284) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 122[0m
+[0;32mI (46294) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 123[0m
+[0;32mI (46314) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 124[0m
+[0;32mI (46324) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 125[0m
+[0;32mI (46344) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 126[0m
+[0;32mI (46364) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 127[0m
+[0;32mI (46374) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 128[0m
+[0;32mI (46394) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 129[0m
+[0;32mI (46404) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 130[0m
+[0;32mI (46424) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 131[0m
+[0;32mI (46444) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 132[0m
+[0;32mI (46454) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 133[0m
+[0;32mI (46474) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 134[0m
+[0;32mI (46484) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 135[0m
+[0;32mI (46504) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 136[0m
+[0;32mI (46524) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 137[0m
+[0;32mI (46534) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 138[0m
+[0;32mI (46554) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 139[0m
+[0;32mI (46564) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 140[0m
+[0;32mI (46584) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 141[0m
+[0;32mI (46604) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 142[0m
+[0;32mI (46614) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 143[0m
+[0;32mI (46634) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 144[0m
+[0;32mI (46644) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 145[0m
+[0;32mI (46664) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 146[0m
+[0;32mI (46684) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 147[0m
+[0;32mI (46694) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 148[0m
+[0;32mI (46714) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 149[0m
+[0;32mI (46724) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 150[0m
+[0;32mI (46744) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 151[0m
+[0;32mI (46764) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 152[0m
+[0;32mI (46774) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 153[0m
+[0;32mI (46794) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 154[0m
+[0;32mI (46804) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 155[0m
+[0;32mI (46824) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 156[0m
+[0;32mI (46844) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 157[0m
+[0;32mI (46854) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 158[0m
+[0;32mI (46874) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 159[0m
+[0;32mI (46884) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 160[0m
+[0;32mI (46904) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 161[0m
+[0;32mI (46924) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 162[0m
+[0;32mI (46934) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 163[0m
+[0;32mI (46954) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 164[0m
+[0;32mI (46964) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 165[0m
+[0;32mI (46984) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 166[0m
+[0;32mI (47004) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 167[0m
+[0;32mI (47014) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 168[0m
+[0;32mI (47034) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 169[0m
+[0;32mI (47044) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 170[0m
+[0;32mI (47064) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 171[0m
+[0;32mI (47084) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 172[0m
+[0;32mI (47094) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 173[0m
+[0;32mI (47114) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 174[0m
+[0;32mI (47124) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 175[0m
+[0;32mI (47144) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 176[0m
+[0;32mI (47164) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 177[0m
+[0;32mI (47174) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 178[0m
+[0;32mI (47194) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 179[0m
+[0;32mI (47204) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 180[0m
+[0;32mI (47224) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 181[0m
+[0;32mI (47244) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 182[0m
+[0;32mI (47254) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 183[0m
+[0;32mI (47274) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 184[0m
+[0;32mI (47284) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 185[0m
+[0;32mI (47304) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 186[0m
+[0;32mI (47324) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 187[0m
+[0;32mI (47334) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 188[0m
+[0;32mI (47354) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 189[0m
+[0;32mI (47364) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 190[0m
+[0;32mI (47384) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 191[0m
+[0;32mI (47404) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 192[0m
+[0;32mI (47414) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 193[0m
+[0;32mI (47434) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 194[0m
+[0;32mI (47444) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 195[0m
+[0;32mI (47464) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 196[0m
+[0;32mI (47484) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 197[0m
+[0;32mI (47494) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 198[0m
+[0;32mI (47514) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 199[0m
+[0;32mI (47524) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 200[0m
+[0;32mI (47544) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 201[0m
+[0;32mI (47564) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 202[0m
+[0;32mI (47574) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 203[0m
+[0;32mI (47594) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 204[0m
+[0;32mI (47604) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 205[0m
+[0;32mI (47624) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 206[0m
+[0;32mI (47644) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 207[0m
+[0;32mI (47654) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 208[0m
+[0;32mI (47674) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 209[0m
+[0;32mI (47684) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 210[0m
+[0;32mI (47704) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 211[0m
+[0;32mI (47724) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 212[0m
+[0;32mI (47734) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 213[0m
+[0;32mI (47754) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 214[0m
+[0;32mI (47764) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 215[0m
+[0;32mI (47784) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 216[0m
+[0;32mI (47804) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 217[0m
+[0;32mI (47814) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 218[0m
+[0;32mI (47834) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 219[0m
+[0;32mI (47844) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 220[0m
+[0;32mI (47864) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 221[0m
+[0;32mI (47884) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 222[0m
+[0;32mI (47894) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 223[0m
+[0;32mI (47914) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 224[0m
+[0;32mI (47924) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 225[0m
+[0;32mI (47944) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 226[0m
+[0;32mI (47964) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 227[0m
+[0;32mI (47974) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 228[0m
+[0;32mI (47994) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 229[0m
+[0;32mI (48004) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 230[0m
+[0;32mI (48024) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 231[0m
+[0;32mI (48044) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 232[0m
+[0;32mI (48054) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 233[0m
+[0;32mI (48074) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 234[0m
+[0;32mI (48084) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 235[0m
+[0;32mI (48104) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 236[0m
+[0;32mI (48124) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 237[0m
+[0;32mI (48134) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 238[0m
+[0;32mI (48154) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 239[0m
+[0;32mI (48164) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 240[0m
+[0;32mI (48184) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 241[0m
+[0;32mI (48204) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 242[0m
+[0;32mI (48214) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 243[0m
+[0;32mI (48234) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 244[0m
+[0;32mI (48244) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 245[0m
+[0;32mI (48264) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 246[0m
+[0;32mI (48284) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 247[0m
+[0;32mI (48294) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 248[0m
+[0;32mI (48314) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 249[0m
+[0;32mI (48324) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 250[0m
+[0;32mI (48344) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 251[0m
+[0;32mI (48364) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 252[0m
+[0;32mI (48374) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 253[0m
+[0;32mI (48394) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 254[0m
+[0;32mI (48404) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 255[0m
+[0;32mI (48424) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 0[0m
+[0;32mI (48444) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 1[0m
+[0;32mI (48454) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 2[0m
+[0;32mI (48474) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 3[0m
+[0;32mI (48484) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 4[0m
+[0;32mI (48504) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 5[0m
+[0;32mI (48524) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 6[0m
+[0;32mI (48534) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 7[0m
+[0;32mI (48554) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 8[0m
+[0;32mI (48564) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 9[0m
+[0;32mI (48584) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 10[0m
+[0;32mI (48604) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 11[0m
+[0;32mI (48614) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 12[0m
+[0;32mI (48634) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 13[0m
+[0;32mI (48644) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 14[0m
+[0;32mI (48664) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 15[0m
+[0;32mI (48684) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 16[0m
+[0;32mI (48694) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 17[0m
+[0;32mI (48714) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 18[0m
+[0;32mI (48724) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 19[0m
+[0;32mI (48744) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 20[0m
+[0;32mI (48764) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 21[0m
+[0;32mI (48774) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 22[0m
+[0;32mI (48794) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 23[0m
+[0;32mI (48804) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 24[0m
+[0;32mI (48824) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 25[0m
+[0;32mI (48844) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 26[0m
+[0;32mI (48854) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 27[0m
+[0;32mI (48874) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 28[0m
+[0;32mI (48884) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 29[0m
+[0;32mI (48904) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 30[0m
+[0;32mI (48924) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 31[0m
+[0;32mI (48934) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 32[0m
+[0;32mI (48954) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 33[0m
+[0;32mI (48964) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 34[0m
+[0;32mI (48984) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 35[0m
+[0;32mI (49004) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 36[0m
+[0;32mI (49014) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 37[0m
+[0;32mI (49034) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 38[0m
+[0;32mI (49044) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 39[0m
+[0;32mI (49064) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 40[0m
+[0;32mI (49084) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 41[0m
+[0;32mI (49094) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 42[0m
+[0;32mI (49114) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 43[0m
+[0;32mI (49124) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 44[0m
+[0;32mI (49144) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 45[0m
+[0;32mI (49164) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 46[0m
+[0;32mI (49174) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 47[0m
+[0;32mI (49194) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 48[0m
+[0;32mI (49204) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 49[0m
+[0;32mI (49224) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 50[0m
+[0;32mI (49244) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 51[0m
+[0;32mI (49254) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 52[0m
+[0;32mI (49274) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 53[0m
+[0;32mI (49284) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 54[0m
+[0;32mI (49304) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 55[0m
+[0;32mI (49324) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 56[0m
+[0;32mI (49334) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 57[0m
+[0;32mI (49354) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 58[0m
+[0;32mI (49364) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 59[0m
+[0;32mI (49384) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 60[0m
+[0;32mI (49404) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 61[0m
+[0;32mI (49414) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 62[0m
+[0;32mI (49434) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 63[0m
+[0;32mI (49444) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 64[0m
+[0;32mI (49464) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 65[0m
+[0;32mI (49484) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 66[0m
+[0;32mI (49494) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 67[0m
+[0;32mI (49514) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 68[0m
+[0;32mI (49524) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 69[0m
+[0;32mI (49544) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 70[0m
+[0;32mI (49584) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 71[0m
+[0;32mI (49584) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 72[0m
+[0;32mI (49594) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 73[0m
+[0;32mI (49604) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 74[0m
+[0;32mI (49624) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 75[0m
+[0;32mI (49644) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 76[0m
+[0;32mI (49654) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 77[0m
+[0;32mI (49674) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 78[0m
+[0;32mI (49684) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 79[0m
+[0;32mI (49704) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 80[0m
+[0;32mI (49724) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 81[0m
+[0;32mI (49734) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 82[0m
+[0;32mI (49754) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 83[0m
+[0;32mI (49764) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 84[0m
+[0;32mI (49784) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 85[0m
+[0;32mI (49804) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 86[0m
+[0;32mI (49814) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 87[0m
+[0;32mI (49834) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 88[0m
+[0;32mI (49844) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 89[0m
+[0;32mI (49864) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 90[0m
+[0;32mI (49884) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 91[0m
+[0;32mI (49894) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 92[0m
+[0;32mI (49914) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 93[0m
+[0;32mI (49924) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 94[0m
+[0;32mI (49944) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 95[0m
+[0;32mI (49964) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 96[0m
+[0;32mI (49974) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 97[0m
+[0;32mI (49994) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 98[0m
+[0;32mI (50004) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 99[0m
+[0;32mI (50024) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 100[0m
+[0;32mI (50044) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 101[0m
+[0;32mI (50054) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 102[0m
+[0;32mI (50074) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 103[0m
+[0;32mI (50084) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 104[0m
+[0;32mI (50104) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 105[0m
+[0;32mI (50124) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 106[0m
+[0;32mI (50134) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 107[0m
+[0;32mI (50154) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 108[0m
+[0;32mI (50164) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 109[0m
+[0;32mI (50184) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 110[0m
+[0;32mI (50204) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 111[0m
+[0;32mI (50214) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 112[0m
+[0;32mI (50234) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 113[0m
+[0;32mI (50244) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 114[0m
+[0;32mI (50264) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 115[0m
+[0;32mI (50284) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 116[0m
+[0;32mI (50294) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 117[0m
+[0;32mI (50314) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 118[0m
+[0;32mI (50324) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 119[0m
+[0;32mI (50344) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 120[0m
+[0;32mI (50364) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 121[0m
+[0;32mI (50374) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 122[0m
+[0;32mI (50394) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 123[0m
+[0;32mI (50404) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 124[0m
+[0;32mI (50424) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 125[0m
+[0;32mI (50444) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 126[0m
+[0;32mI (50454) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 127[0m
+[0;32mI (50474) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 128[0m
+[0;32mI (50484) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 129[0m
+[0;32mI (50504) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 130[0m
+[0;32mI (50524) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 131[0m
+[0;32mI (50534) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 132[0m
+[0;32mI (50554) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 133[0m
+[0;32mI (50564) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 134[0m
+[0;32mI (50584) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 135[0m
+[0;32mI (50604) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 136[0m
+[0;32mI (50614) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 137[0m
+[0;32mI (50634) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 138[0m
+[0;32mI (50644) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 139[0m
+[0;32mI (50664) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 140[0m
+[0;32mI (50684) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 141[0m
+[0;32mI (50694) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 142[0m
+[0;32mI (50714) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 143[0m
+[0;32mI (50724) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 144[0m
+[0;32mI (50744) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 145[0m
+[0;32mI (50764) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 146[0m
+[0;32mI (50774) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 147[0m
+[0;32mI (50794) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 148[0m
+[0;32mI (50804) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 149[0m
+[0;32mI (50824) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 150[0m
+[0;32mI (50844) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 151[0m
+[0;32mI (50854) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 152[0m
+[0;32mI (50874) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 153[0m
+[0;32mI (50884) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 154[0m
+[0;32mI (50904) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 155[0m
+[0;32mI (50924) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 156[0m
+[0;32mI (50934) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 157[0m
+[0;32mI (50954) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 158[0m
+[0;32mI (50964) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 159[0m
+[0;32mI (50984) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 160[0m
+[0;32mI (51004) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 161[0m
+[0;32mI (51014) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 162[0m
+[0;32mI (51034) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 163[0m
+[0;32mI (51044) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 164[0m
+[0;32mI (51064) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 165[0m
+[0;32mI (51084) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 166[0m
+[0;32mI (51094) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 167[0m
+[0;32mI (51114) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 168[0m
+[0;32mI (51124) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 169[0m
+[0;32mI (51144) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 170[0m
+[0;32mI (51164) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 171[0m
+[0;32mI (51174) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 172[0m
+[0;32mI (51194) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 173[0m
+[0;32mI (51204) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 174[0m
+[0;32mI (51224) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 175[0m
+[0;32mI (51244) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 176[0m
+[0;32mI (51254) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 177[0m
+[0;32mI (51274) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 178[0m
+[0;32mI (51284) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 179[0m
+[0;32mI (51304) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 180[0m
+[0;32mI (51324) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 181[0m
+[0;32mI (51334) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 182[0m
+[0;32mI (51354) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 183[0m
+[0;32mI (51364) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 184[0m
+[0;32mI (51384) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 185[0m
+[0;32mI (51404) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 186[0m
+[0;32mI (51414) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 187[0m
+[0;32mI (51434) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 188[0m
+[0;32mI (51444) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 189[0m
+[0;32mI (51464) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 190[0m
+[0;32mI (51484) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 191[0m
+[0;32mI (51494) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 192[0m
+[0;32mI (51514) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 193[0m
+[0;32mI (51524) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 194[0m
+[0;32mI (51544) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 195[0m
+[0;32mI (51564) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 196[0m
+[0;32mI (51574) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 197[0m
+[0;32mI (51594) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 198[0m
+[0;32mI (51604) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 199[0m
+[0;32mI (51624) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 200[0m
+[0;32mI (51644) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 201[0m
+[0;32mI (51654) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 202[0m
+[0;32mI (51674) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 203[0m
+[0;32mI (51684) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 204[0m
+[0;32mI (51704) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 205[0m
+[0;32mI (51724) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 206[0m
+[0;32mI (51734) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 207[0m
+[0;32mI (51754) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 208[0m
+[0;32mI (51764) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 209[0m
+[0;32mI (51784) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 210[0m
+[0;32mI (51804) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 211[0m
+[0;32mI (51814) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 212[0m
+[0;32mI (51834) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 213[0m
+[0;32mI (51844) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 214[0m
+[0;32mI (51864) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 215[0m
+[0;32mI (51884) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 216[0m
+[0;32mI (51894) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 217[0m
+[0;32mI (51914) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 218[0m
+[0;32mI (51924) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 219[0m
+[0;32mI (51944) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 220[0m
+[0;32mI (51964) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 221[0m
+[0;32mI (51974) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 222[0m
+[0;32mI (51994) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 223[0m
+[0;32mI (52004) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 224[0m
+[0;32mI (52024) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 225[0m
+[0;32mI (52044) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 226[0m
+[0;32mI (52054) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 227[0m
+[0;32mI (52074) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 228[0m
+[0;32mI (52084) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 229[0m
+[0;32mI (52104) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 230[0m
+[0;32mI (52124) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 231[0m
+[0;32mI (52134) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 232[0m
+[0;32mI (52154) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 233[0m
+[0;32mI (52164) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 234[0m
+[0;32mI (52184) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 235[0m
+[0;32mI (52204) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 236[0m
+[0;32mI (52214) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 237[0m
+[0;32mI (52234) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 238[0m
+[0;32mI (52244) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 239[0m
+[0;32mI (52264) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 240[0m
+[0;32mI (52284) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 241[0m
+[0;32mI (52294) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 242[0m
+[0;32mI (52314) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 243[0m
+[0;32mI (52324) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 244[0m
+[0;32mI (52344) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 245[0m
+[0;32mI (52364) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 246[0m
+[0;32mI (52374) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 247[0m
+[0;32mI (52394) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 248[0m
+[0;32mI (52404) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 249[0m
+[0;32mI (52424) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 250[0m
+[0;32mI (52444) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 251[0m
+[0;32mI (52454) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 252[0m
+[0;32mI (52474) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 253[0m
+[0;32mI (52484) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 254[0m
+[0;32mI (52504) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 255[0m
+[0;32mI (52524) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 0[0m
+[0;32mI (52534) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 1[0m
+[0;32mI (52554) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 2[0m
+[0;32mI (52564) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 3[0m
+[0;32mI (52584) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 4[0m
+[0;32mI (52604) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 5[0m
+[0;32mI (52614) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 6[0m
+[0;32mI (52634) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 7[0m
+[0;32mI (52644) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 8[0m
+[0;32mI (52664) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 9[0m
+[0;32mI (52684) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 10[0m
+[0;32mI (52694) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 11[0m
+[0;32mI (52714) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 12[0m
+[0;32mI (52724) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 13[0m
+[0;32mI (52744) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 14[0m
+[0;32mI (52764) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 15[0m
+[0;32mI (52774) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 16[0m
+[0;32mI (52794) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 17[0m
+[0;32mI (52804) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 18[0m
+[0;32mI (52824) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 19[0m
+[0;32mI (52844) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 20[0m
+[0;32mI (52854) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 21[0m
+[0;32mI (52874) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 22[0m
+[0;32mI (52884) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 23[0m
+[0;32mI (52904) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 24[0m
+[0;32mI (52924) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 25[0m
+[0;32mI (52934) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 26[0m
+[0;32mI (52954) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 27[0m
+[0;32mI (52964) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 28[0m
+[0;32mI (52984) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 29[0m
+[0;32mI (53004) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 30[0m
+[0;32mI (53014) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 31[0m
+[0;32mI (53034) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 32[0m
+[0;32mI (53044) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 33[0m
+[0;32mI (53064) TCP_PDM_CLIENT: 已发送 512 字节音频数据, counter: 34[0m
+[0;31mE (53084) TCP_PDM_CLIENT: 包头发送错误: errno 104[0m
+[0;31mE (53084) FreeRTOS: FreeRTOS Task "tcp_pdm_task" should not return, Aborting now![0m
+
+abort() was called at PC 0x4037d223 on core 1
+
+
+Backtrace: 0x40375a8a:0x3fcb58f0 0x4037c649:0x3fcb5910 0x403847b5:0x3fcb5930 0x4037d223:0x3fcb59a0
+
+
+
+
+ELF file SHA256: 717347d01
+
+Rebooting...
+���ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4037ab96
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3810,len:0x1870
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xcec
+load:0x403cc700,len:0x2ec4
+entry 0x403c9918
+[0;32mI (31) boot: ESP-IDF v5.2.5 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Apr  4 2025 01:23:19[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (34) boot: chip revision: v0.2[0m
+[0;32mI (38) boot: efuse block revision: v1.3[0m
+[0;32mI (43) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (47) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (52) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (57) boot: Enabling RNG early entropy source...[0m
+[0;32mI (62) boot: Partition Table:[0m
+[0;32mI (66) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (73) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (81) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (88) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (96) boot: End of partition table[0m
+[0;32mI (100) esp_image: segment 0: paddr=00010020 vaddr=3c090020 size=1b034h (110644) map[0m
+[0;32mI (128) esp_image: segment 1: paddr=0002b05c vaddr=3fc99d00 size=04a90h ( 19088) load[0m
+[0;32mI (132) esp_image: segment 2: paddr=0002faf4 vaddr=40374000 size=00524h (  1316) load[0m
+[0;32mI (134) esp_image: segment 3: paddr=00030020 vaddr=42000020 size=84998h (543128) map[0m
+[0;32mI (238) esp_image: segment 4: paddr=000b49c0 vaddr=40374524 size=156f0h ( 87792) load[0m
+[0;32mI (266) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (267) boot: Disabling RNG early entropy source...[0m
+[0;32mI (278) cpu_start: Multicore app[0m
+[0;32mI (288) cpu_start: Pro cpu start user code[0m
+[0;32mI (288) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (288) cpu_start: Application information:[0m
+[0;32mI (291) cpu_start: Project name:     wifi_send[0m
+[0;32mI (296) cpu_start: App version:      3724b69-dirty[0m
+[0;32mI (301) cpu_start: Compile time:     Apr  4 2025 01:30:57[0m
+[0;32mI (307) cpu_start: ELF file SHA256:  717347d01...[0m
+[0;32mI (313) cpu_start: ESP-IDF:          v5.2.5[0m
+[0;32mI (318) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (322) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (327) cpu_start: Chip rev:         v0.2[0m
+[0;32mI (332) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (339) heap_init: At 3FCA2270 len 000474A0 (285 KiB): RAM[0m
+[0;32mI (345) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (351) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (358) heap_init: At 600FE010 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (365) spi_flash: detected chip: gd[0m
+[0;32mI (368) spi_flash: flash io: dio[0m
+[0;33mW (372) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (385) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (392) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (399) main_task: Started on CPU0[0m
+[0;32mI (409) main_task: Calling app_main()[0m
+[0;32mI (429) pp: pp rom version: e7ae62f[0m
+[0;32mI (429) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (439) wifi:wifi driver task: 3fcac574, prio:23, stack:6656, core=0[0m
+[0;32mI (449) wifi:wifi firmware version: 01d22db[0m
+[0;32mI (449) wifi:wifi certification version: v7.0[0m
+[0;32mI (449) wifi:config NVS flash: enabled[0m
+[0;32mI (449) wifi:config nano formating: disabled[0m
+[0;32mI (449) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (459) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (459) wifi:Init management short buffer num: 32[0m
+[0;32mI (459) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (469) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (469) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (479) wifi:Init static rx buffer num: 10[0m
+[0;32mI (479) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (479) wifi_init: rx ba win: 6[0m
+[0;32mI (489) wifi_init: tcpip mbox: 32[0m
+[0;32mI (489) wifi_init: udp mbox: 6[0m
+[0;32mI (499) wifi_init: tcp mbox: 6[0m
+[0;32mI (499) wifi_init: tcp tx win: 5760[0m
+[0;32mI (499) wifi_init: tcp rx win: 5760[0m
+[0;32mI (509) wifi_init: tcp mss: 1440[0m
+[0;32mI (509) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (519) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (519) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (529) phy_init: phy_version 680,a6008b2,Jun  4 2024,16:41:10[0m
+[0;32mI (579) wifi:mode : sta (d8:3b:da:54:54:88)[0m
+[0;32mI (579) wifi:enable tsf[0m
+[0;32mI (579) TCP_PDM_CLIENT: WiFi初始化完毕，正在连接...[0m
+[0;32mI (609) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1[0m
+[0;32mI (609) wifi:state: init -> auth (b0)[0m
+[0;32mI (619) wifi:state: auth -> assoc (0)[0m
+[0;32mI (619) wifi:state: assoc -> run (10)[0m
+[0;32mI (729) wifi:connected with Yuzhen的iPhone, aid = 1, channel 11, BW20, bssid = b6:3d:c9:1d:f5:10[0m
+[0;32mI (729) wifi:security: WPA2-PSK, phy: bgn, rssi: -20[0m
+[0;32mI (729) wifi:pm start, type: 1[0m
+
+[0;32mI (729) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (739) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (909) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (1749) esp_netif_handlers: sta ip: 172.20.10.3, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (1749) TCP_PDM_CLIENT: 获取到IP地址: 172.20.10.3[0m
+[0;32mI (5579) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;32mI (5579) main_task: Returned from app_main()[0m
+[0;32mI (5729) wifi:<ba-add>idx:0 (ifx:0, b6:3d:c9:1d:f5:10), tid:0, ssn:2, winSize:64[0m
+[0;31mE (5769) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (6779) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (6959) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (7959) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (8179) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (9189) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (9309) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (10309) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (10539) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (11539) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (11589) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (12599) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (12789) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (13789) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (13919) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (14919) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (15259) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (16259) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (16379) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (17379) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (17609) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (18609) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (18659) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (19659) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (19859) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (20859) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (21499) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (22499) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (22719) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (23729) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (24159) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (25159) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (25489) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (26489) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (26489) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (27489) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (27959) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (28959) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (29079) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (30079) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (30199) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (31199) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (31749) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (32749) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (32969) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (33969) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (34019) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (35019) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (35089) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (36089) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (36239) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (37239) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (37369) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (38369) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (38419) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (39419) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (39619) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (40619) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (40749) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (41749) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (42079) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (43079) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (43409) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (44409) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (44639) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (45639) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (45689) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (46689) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (46989) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (47989) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (48119) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (49119) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (49349) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (50349) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (50579) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (51579) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (51629) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (52629) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (52829) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (53839) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (53859) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (54859) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (54879) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (55879) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (56109) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (57109) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (57339) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (58339) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (58559) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (59569) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (59569) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (60569) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (60719) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (61719) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (61769) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (62769) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (62969) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (63969) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (63969) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (64969) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (65119) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (66119) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (66349) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (67349) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (67579) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (68579) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (68599) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (69599) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (69729) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (70729) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (70779) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (71779) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (71979) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (72979) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (73109) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (74109) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (74159) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (75159) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (75469) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (76469) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (76509) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (77509) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (77819) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (78819) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (78939) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (79939) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (80069) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (81069) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (81119) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (82119) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (82219) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (83219) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (83229) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (84229) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (84369) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (85379) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (85379) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (86379) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (86389) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (87389) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (87549) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (88549) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (88579) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (89579) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (89599) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (90599) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (90599) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (91599) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (91609) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (92609) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (92769) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (93769) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (93779) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (94779) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (94779) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (95779) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (95939) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (96939) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (96969) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (97969) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (97989) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (98989) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (99029) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (100029) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (100039) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (101039) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (101059) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (102069) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (102189) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (103189) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (103229) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (104229) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (104449) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (105449) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (105509) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (106509) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (106589) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (107589) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (107599) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (108599) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (108739) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (109739) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (109869) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (110869) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (111099) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (112099) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (112129) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (113129) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (113349) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (114349) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (114479) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (115479) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (115519) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (116519) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (116729) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (117729) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (117959) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (118959) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (119009) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (120009) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (120209) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (121209) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (121229) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (122239) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (122269) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (123269) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (123489) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (124489) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (124719) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (125719) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (125739) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (126739) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (126869) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (127869) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (127879) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (128879) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (129119) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (130119) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (130449) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (131449) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (131579) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (132579) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (132629) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (133629) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (133829) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (134829) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (134959) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (135959) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (135999) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (136999) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (136999) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (137999) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (138029) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (139029) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (139159) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (140159) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (140179) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (141179) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (141299) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (142309) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (142429) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (143429) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (143479) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (144479) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (144479) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (145479) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (145709) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (146709) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (146939) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (147939) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (147989) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (148989) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (149189) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (150189) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (150189) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (151189) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (151339) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (152339) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (152469) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (153469) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (153519) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (154519) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (154719) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (155719) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (156159) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (157159) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (157189) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (158189) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (158219) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (159219) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (159219) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (160219) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (160349) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (161349) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (161479) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (162479) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (162529) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (163529) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (163729) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (164729) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (164859) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (165859) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (166089) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (167089) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (167309) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (168309) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (168539) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (169539) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (169669) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (170679) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (170999) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (171999) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (172439) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (173439) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (173489) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (174489) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (174689) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (175689) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (175739) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (176739) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (176839) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (177839) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (177869) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (178869) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (178899) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (179899) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (180319) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (181319) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (181649) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (182649) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (182879) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (183879) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (184009) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (185009) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (185339) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (186339) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (186369) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (187379) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (187589) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (188589) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (188949) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (189949) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (190459) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (191459) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (191689) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (192689) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (193019) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (194019) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (194239) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (195249) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (195249) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (196249) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (196249) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (197259) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (197279) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (198279) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (198549) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (199549) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (199779) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (200779) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (200829) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (201829) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (202029) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (203029) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (203259) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (204259) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (204269) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (205269) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (205509) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (206509) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (206509) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (207509) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (207659) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (208659) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (208789) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (209789) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (209909) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (210919) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (211039) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (212039) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (212269) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (213269) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (213309) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (214309) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (214369) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (215369) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (215409) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (216409) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (216769) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (217779) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (217999) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (218999) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (218999) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (219999) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (220249) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (221259) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (221379) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (222379) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (222409) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (223409) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (223419) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (224419) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (224659) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (225659) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (225659) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (226659) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (226709) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (227709) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (227739) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (228739) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (228859) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (229859) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (230189) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (231189) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (231419) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (232419) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (232419) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (233419) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (233569) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (234569) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (234799) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (235799) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (236229) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (237229) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (237459) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (238459) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (238689) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (239689) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (239809) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (240809) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (241049) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (242059) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (242779) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (243779) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (244109) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (245109) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (245339) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (246339) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (246359) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (247359) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (247899) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (248909) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (248959) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (249959) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (249999) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (250999) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (251179) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (252179) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (252209) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (253209) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (253239) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (254239) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (254259) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (255259) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (255289) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (256289) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (256299) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (257299) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (257429) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (258429) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (258659) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (259659) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (259709) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (260709) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (260909) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (261909) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (262439) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (263439) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (263569) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (264569) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (264699) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (265699) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (265819) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (266819) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (266849) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (267849) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (267849) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (268849) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (269099) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (270099) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (270119) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (271119) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (271249) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (272249) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (272299) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (273299) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (273509) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (274509) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (274629) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (275629) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (275859) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (276859) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (276869) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (277869) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (277899) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (278899) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (278899) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (279899) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (280059) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (281059) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (281069) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (282069) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (282209) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (283209) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (283329) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (284329) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (284329) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (285329) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (285479) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (286479) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (286489) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (287489) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (287499) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (288499) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (288529) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (289529) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (289689) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (290689) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (290819) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (291819) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (291929) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (292939) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (293059) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (294059) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (294109) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (295109) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (295329) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (296329) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (296539) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (297549) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (297549) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (298549) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (298689) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (299689) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (299729) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (300729) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (300949) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (301949) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (301959) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (302959) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (303099) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (304099) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (304329) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (305329) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (305379) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (306379) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (306679) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (307679) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (307809) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (308809) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (308929) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (309929) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (310059) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (311059) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (311289) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (312289) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (312289) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (313289) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (313439) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (314439) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (314769) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (315769) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (315799) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (316799) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (317019) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (318019) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (318049) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (319049) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (319089) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (320089) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (320299) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (321299) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (321429) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (322429) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (322479) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (323479) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (323679) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (324679) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (325629) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (326629) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (326759) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (327759) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (327879) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (328879) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (328929) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (329929) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (330229) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (331229) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (331359) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (332359) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (332409) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (333409) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (333919) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (334919) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (334919) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (335919) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (336279) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (337279) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (337399) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (338399) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (338639) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (339639) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (339679) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (340679) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (340979) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (341979) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (341979) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (342979) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (343139) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (344139) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (344169) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (345169) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (345389) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (346389) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (346619) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (347619) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (347639) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (348639) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (348689) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (349699) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (350099) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (351099) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (351329) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (352329) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (352369) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (353369) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (353579) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (354579) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (354709) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (355709) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (355759) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (356759) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (357369) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (358369) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (358599) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (359599) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (359629) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (360629) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (360849) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (361849) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (361899) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (362899) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (363099) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (364099) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (364429) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (365429) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (365659) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (366659) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (366789) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (367789) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (367789) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (368799) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (368939) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (369939) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (369989) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (370989) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (371189) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (372199) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (372519) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (373519) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (373749) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (374759) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (374769) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (375769) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (375899) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (376899) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (377229) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (378239) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (378289) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (379289) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (379589) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (380589) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (380819) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (381819) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (381839) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (382839) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (383069) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (384069) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (384199) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (385199) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (385429) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (386429) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (386549) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (387549) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (387679) TCP_PDM_CLIENT: Socket连接失败: errno 104[0m
+[0;32mI (388679) TCP_PDM_CLIENT: Socket创建成功，正在连接 172.20.10.2:1234[0m
+[0;31mE (388699) TCP_PDM_CLIENT: Socket连

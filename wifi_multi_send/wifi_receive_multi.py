@@ -1,5 +1,16 @@
 import socket
 import struct
+import sys, select, termios, tty, wave
+import numpy as np
+import threading
+from queue import Queue
+import whisper
+from datetime import datetime, timedelta
+from time import sleep
+from sys import platform
+import torch
+import os
+import threading 
 
 def main():
     HOST = ''         # Listen on all available network interfaces
@@ -30,10 +41,10 @@ def main():
                     conn.sendall(b"ACK")
 
 def PDM_receive():
-    HOST = ''         # 监听所有可用的网络接口
-    PORT = 1234       # 监听端口（与 ESP32 端口一致）
+    HOST = ''         # Listen on all available network interfaces
+    PORT = 1234       # Listening port (must match the ESP32 configuration)
 
-    # 创建 TCP/IP socket
+    # Create TCP/IP socket
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         s.bind((HOST, PORT))
         s.listen(1)
@@ -44,52 +55,49 @@ def PDM_receive():
             with conn:
                 print(f"Connected by {addr}")
                 while True:
-                    # 每次最多接收 1024 字节数据
+                    # Receive up to 1024 bytes of data each time
                     data = conn.recv(1024)
                     if not data:
                         print(f"Connection with {addr} closed.")
                         break
 
-                    # 判断数据长度是否足够读取前 4 个 PCM 数据（8 字节）
-                    if len(data) == 1: # this is the counter 
+                    # Check if data length is enough to read the first 4 PCM data (8 bytes)
+                    if len(data) == 1:  # this is the counter
                         counter_index = data[0]
-                       
-                        print("the current received counter is: ", counter_index)
+                        print("The current received counter is:", counter_index)
 
                     elif len(data) >= 8:
-                        # 提取前 8 个字节
+                        # Extract the first 8 bytes
                         first_8_bytes = data[:8]
-                        # 用 little-endian 格式解包 4 个 16 位整数（根据具体情况选择 '<4h' 或 '>4h'）
+                        # Unpack 4 x 16-bit integers using little-endian format ('<4h' or '>4h')
                         pcm_samples = struct.unpack('<4h', first_8_bytes)
                         # print("First 4 PCM samples:", pcm_samples)
 
-                        # 将剩余数据以十六进制字符串打印出来
+                        # Print the remaining data in hex string format
                         # rest_data = data[8:]
                         # print("Remaining data (hex):", rest_data.hex())
                     else:
                         print("Received data (too short):", data.hex())
 
-                    # 可选：发送响应给客户端
+                    # Optional: send a response back to the client
                     conn.sendall(b"ACK")
-
-
 
 def record_WAV_wifi():
     import socket
     import sys, select, termios, tty
     import wave
 
-    # 设置监听参数
-    HOST = ''          # 监听所有可用网络接口
-    PORT = 1234        # 端口号（需和 ESP32 端口一致）
+    # Set listening parameters
+    HOST = ''          # Listen on all available network interfaces
+    PORT = 1234        # Port (must match ESP32 side)
 
-    # PCM 参数（根据 ESP32 端发送数据的格式设置）
-    sample_rate = 16000     # 采样率
-    sample_width = 2        # 16位PCM，每个样本2字节
-    num_channels = 1        # 单声道
+    # PCM parameters (based on the ESP32 data format)
+    sample_rate = 16000     # Sampling rate
+    sample_width = 2        # 16-bit PCM, 2 bytes per sample
+    num_channels = 1        # Mono
     WAV_FILENAME = 'wifi_pcm_data.wav'
 
-    # 创建 TCP 服务器并监听连接
+    # Create TCP server and listen for connections
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server_socket.bind((HOST, PORT))
     server_socket.listen(1)
@@ -98,56 +106,55 @@ def record_WAV_wifi():
     conn, addr = server_socket.accept()
     print(f"Connected by {addr}")
 
-    # 设置键盘输入模式（适用于 Unix/Linux）
+    # Set the keyboard input mode (for Unix/Linux)
     old_settings = termios.tcgetattr(sys.stdin)
     tty.setcbreak(sys.stdin.fileno())
 
-    recording = False  # 录音状态开关
+    recording = False  # Recording state switch
 
-    # 打开 WAV 文件用于写入（整个过程中始终打开，根据录音状态判断是否写入数据）
+    # Open the WAV file for writing (opened throughout, only write if recording)
     wf = wave.open(WAV_FILENAME, 'wb')
     wf.setnchannels(num_channels)
     wf.setsampwidth(sample_width)
     wf.setframerate(sample_rate)
 
-    print("按空格键开始/停止录音，Ctrl+C退出。")
+    print("Press space to start/stop recording, Ctrl+C to exit.")
 
     try:
         while True:
-            # 同时监听键盘输入和网络数据，等待0.1秒
+            # Simultaneously monitor keyboard input and network data, wait 0.1s
             ready_to_read, _, _ = select.select([sys.stdin, conn], [], [], 0.1)
             
-            # 检查是否有键盘输入
+            # Check if there is keyboard input
             if sys.stdin in ready_to_read:
                 key = sys.stdin.read(1)
                 if key == ' ':
                     recording = not recording
                     if recording:
-                        print("开始录音...")
+                        print("Start recording...")
                     else:
-                        print("结束录音，数据保存到文件：", WAV_FILENAME)
+                        print("Stop recording, data saved to file:", WAV_FILENAME)
             
-            # 检查是否有网络数据到达
+            # Check if there is network data
             if conn in ready_to_read:
                 data = conn.recv(512)
                 if not data:
-                    print("客户端断开连接")
+                    print("Client disconnected")
                     break
-                # 如果处于录音状态，将数据写入 WAV 文件
+                # If in recording state, write data to WAV file
                 if recording:
                     wf.writeframes(data)
     except KeyboardInterrupt:
-        print("退出录音程序")
+        print("Exiting the recording program")
     finally:
         termios.tcsetattr(sys.stdin, termios.TCSADRAIN, old_settings)
         conn.close()
         server_socket.close()
         wf.close()
 
-
 def recv_all(conn, length):
     """
-    确保从连接中接收指定长度的数据，否则返回 None。
+    Ensure the specified length of data is received from the connection, or return None if not possible.
     """
     data = b""
     while len(data) < length:
@@ -157,10 +164,9 @@ def recv_all(conn, length):
         data += more
     return data
 
-
 def bag_513():
-    HOST = ""   # 监听所有网络接口
-    PORT = 1234 # 与 ESP32 端口保持一致
+    HOST = ""   # Listen on all network interfaces
+    PORT = 1234 # Must match the ESP32 port
 
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server_socket.bind((HOST, PORT))
@@ -172,47 +178,45 @@ def bag_513():
         print("Connected by", addr)
         with conn:
             while True:
-                # 先接收包头：2字节，表示后续数据包的长度（网络字节序）
+                # First receive the header: 2 bytes, indicating the length of the subsequent data packet (network byte order)
                 header = recv_all(conn, 2)
                 if header is None:
-                    print("连接关闭或读取包头失败")
+                    print("Connection closed or failed to read header")
                     break
-                # 使用 '!H' 格式解包（无符号短整型，网络字节序）
+                # Use '!H' format to unpack (unsigned short, network byte order)
                 packet_length, = struct.unpack("!H", header)
                 
-                # 根据包头中的长度接收完整数据包
+                # Receive the complete data packet according to the length in the header
                 packet = recv_all(conn, packet_length)
                 if packet is None:
-                    print("连接关闭或读取数据包失败")
+                    print("Connection closed or failed to read data packet")
                     break
                 
-                # 假设协议定义数据包长度固定为513字节：
-                # 前512字节为音频数据，最后1字节为计数器
+                # Assume protocol defines a fixed data packet length of 513 bytes:
+                # The first 512 bytes are audio data, the last 1 byte is a counter
                 if packet_length != 513:
-                    print("收到异常长度的数据包：", packet_length)
+                    print("Received abnormal-length data packet:", packet_length)
                 else:
-                    audio_data = packet[:-1]  # 前512字节：音频数据
-                    counter = packet[-1]      # 最后1字节：计数器
-                    print("收到音频数据长度：", len(audio_data), "计数器：", counter)
+                    audio_data = packet[:-1]  # The first 512 bytes: audio data
+                    counter = packet[-1]      # The last byte: counter
+                    print("Received audio data length:", len(audio_data), "Counter:", counter)
                     
-                    # 此处可以进一步处理 audio_data（例如保存到文件等）
-        print("客户端断开连接")
+                    # Further process audio_data here (e.g., save to file)
+        print("Client disconnected")
 
     server_socket.close()
 
-import sys, select, termios, tty, struct, wave
-
 def record_WAV_wifi_513():
-    HOST = ''          # 监听所有网络接口
-    PORT = 1234        # 端口号（需与ESP32端一致）
+    HOST = ''          # Listen on all network interfaces
+    PORT = 1234        # Port number (must match the ESP32 side)
 
-    # PCM参数（根据ESP32发送的数据格式设置）
-    sample_rate = 16000     # 采样率
-    sample_width = 2        # 16位PCM，每个样本2字节
-    num_channels = 1        # 单声道
+    # PCM parameters (according to the data format sent by the ESP32)
+    sample_rate = 16000     # Sampling rate
+    sample_width = 2        # 16-bit PCM, 2 bytes per sample
+    num_channels = 1        # Mono
     WAV_FILENAME = 'wifi_pcm_data.wav'
 
-    # 创建TCP服务器并监听连接
+    # Create a TCP server and listen for connections
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server_socket.bind((HOST, PORT))
     server_socket.listen(1)
@@ -221,92 +225,87 @@ def record_WAV_wifi_513():
     conn, addr = server_socket.accept()
     print(f"Connected by {addr}")
 
-    # 设置键盘输入模式（适用于Unix/Linux）
+    # Set up keyboard input mode (for Unix/Linux)
     old_settings = termios.tcgetattr(sys.stdin)
     tty.setcbreak(sys.stdin.fileno())
 
-    recording = False  # 录音状态开关
+    recording = False  # Recording state switch
 
-    # 打开WAV文件用于写入
+    # Open the WAV file for writing
     wf = wave.open(WAV_FILENAME, 'wb')
     wf.setnchannels(num_channels)
     wf.setsampwidth(sample_width)
     wf.setframerate(sample_rate)
 
-    print("按空格键开始/停止录音，Ctrl+C退出。")
+    print("Press space to start/stop recording, Ctrl+C to exit.")
 
     last_counter = None
     try:
         while True:
-            # 同时监听键盘输入和网络数据，等待0.1秒
+            # Simultaneously listen for keyboard input and network data for 0.1 seconds
             ready_to_read, _, _ = select.select([sys.stdin, conn], [], [], 0.1)
 
-            # 检查是否有键盘输入
+            # Check for keyboard input
             if sys.stdin in ready_to_read:
                 key = sys.stdin.read(1)
                 if key == ' ':
                     recording = not recording
                     if recording:
-                        print("开始录音...")
+                        print("Start recording...")
                     else:
-                        print("结束录音，数据保存到文件：", WAV_FILENAME)
+                        print("Stop recording, data saved to file:", WAV_FILENAME)
 
-            # 检查网络数据
+            # Check network data
             if conn in ready_to_read:
-                # 先接收包头：2字节，表示后续数据包的总长度（网络字节序）
+                # First receive the 2-byte header (total length of the subsequent data packet, network byte order)
                 header = recv_all(conn, 2)
                 if header is None:
-                    print("连接关闭或读取包头失败")
+                    print("Connection closed or failed to read the header")
                     break
-                # 使用 '!H' 格式解包（无符号短整型，网络字节序）
                 packet_length, = struct.unpack("!H", header)
                 
-                # 根据包头中的长度接收完整数据包
+                # Receive the complete data packet according to the length in the header
                 packet = recv_all(conn, packet_length)
                 if packet is None:
-                    print("连接关闭或读取数据包失败")
+                    print("Connection closed or failed to read the data packet")
                     break
                 
-                # 协议定义：数据包长度固定为513字节
-                # 前512字节为音频数据，最后1字节为计数器
+                # Protocol definition: data packet length is fixed at 513 bytes
+                # The first 512 bytes are audio data, the last 1 byte is the counter
                 if packet_length != 513:
-                    print("收到异常长度的数据包：", packet_length)
+                    print("Received abnormal-length data packet:", packet_length)
                 else:
-                    audio_data = packet[:-1]  # 前512字节：音频数据
-                    counter = packet[-1]      # 最后1字节：计数器
+                    audio_data = packet[:-1]
+                    counter = packet[-1]
                     if recording:
-                        print("收到音频数据长度：", len(audio_data), "计数器：", counter)
-                        if last_counter != None and counter - last_counter != 1 and counter != 0:
-                            print("warning!!! we lost one package")
-                        last_counter = counter 
-                    
-                    # 如果处于录音状态，则将音频数据写入WAV文件
+                        print("Received audio data length:", len(audio_data), "Counter:", counter)
+                        if last_counter is not None and counter - last_counter != 1 and counter != 0:
+                            print("Warning!!! We lost one package")
+                        last_counter = counter
+
+                    # If recording, write the audio data to the WAV file
                     if recording:
                         wf.writeframes(audio_data)
     except KeyboardInterrupt:
-        print("退出录音程序")
+        print("Exiting the recording program")
     finally:
         termios.tcsetattr(sys.stdin, termios.TCSADRAIN, old_settings)
         conn.close()
         server_socket.close()
         wf.close()
 
-    #checking the counter: 
-
-
-
 def record_WAV_wifi_1025():
-    HOST = ''          # 监听所有网络接口
-    PORT = 1234        # 端口号（需与ESP32端一致）
+    HOST = ''          # Listen on all network interfaces
+    PORT = 1234        # Port number (must match the ESP32 side)
 
-    # ========== WAV文件参数设置 ==========
-    sample_rate = 16000      # 采样率
-    sample_width = 2         # 每个样本2字节(16位)
-    num_channels = 1         # 这里将左右声道分到两个单声道文件
+    # ========== WAV file parameter settings ==========
+    sample_rate = 16000      # Sampling rate
+    sample_width = 2         # 16-bit per sample (2 bytes)
+    num_channels = 1         # We'll split left/right into two mono files
     left_wav_filename = 'wifi_pcm_data_channle1.wav'
     right_wav_filename = 'wifi_pcm_data_channle2.wav'
 
-    # ========== 创建TCP服务器，监听连接 ==========
+    # ========== Create a TCP server and listen for connections ==========
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server_socket.bind((HOST, PORT))
     server_socket.listen(1)
@@ -315,77 +314,79 @@ def record_WAV_wifi_1025():
     conn, addr = server_socket.accept()
     print(f"Connected by {addr}")
 
-    # ========== 设置非阻塞读取键盘输入（适用于Unix/Linux） ==========
+    # ========== Set non-blocking keyboard input reading (for Unix/Linux) ==========
     old_settings = termios.tcgetattr(sys.stdin)
     tty.setcbreak(sys.stdin.fileno())
 
-    recording = False  # 录音状态开关
+    # recording = False  # Recording state switch
 
-    # ========== 创建两个WAV文件，分别存左/右声道（单声道） ==========
+    # ========== Create two WAV files for left/right channels (mono) ==========
     wf_left = wave.open(left_wav_filename, 'wb')
-    wf_left.setnchannels(num_channels)   # 单声道
-    wf_left.setsampwidth(sample_width)   # 16位PCM
-    wf_left.setframerate(sample_rate)    # 16k采样率
+    wf_left.setnchannels(num_channels)
+    wf_left.setsampwidth(sample_width)
+    wf_left.setframerate(sample_rate)
 
     wf_right = wave.open(right_wav_filename, 'wb')
-    wf_right.setnchannels(num_channels)  # 单声道
-    wf_right.setsampwidth(sample_width)  # 16位PCM
-    wf_right.setframerate(sample_rate)   # 16k采样率
+    wf_right.setnchannels(num_channels)
+    wf_right.setsampwidth(sample_width)
+    wf_right.setframerate(sample_rate)
 
-    print("按空格键开始/停止录音，Ctrl+C退出。")
+    print("Press space to start/stop recording, Ctrl+C to exit.")
 
     last_counter = None
+
+    left_buffer = b''
+    right_buffer = b''
+
+
     try:
         while True:
-            # 同时监听键盘输入和网络数据，等待0.1秒
+            # Listen for keyboard input and network data for 0.1 seconds
             ready_to_read, _, _ = select.select([sys.stdin, conn], [], [], 0.1)
 
-            # ========== 检查键盘输入，用空格切换录音状态 ==========
-            if sys.stdin in ready_to_read:
-                key = sys.stdin.read(1)
-                if key == ' ':
-                    recording = not recording
-                    if recording:
-                        print("开始录音...")
-                    else:
-                        print("结束录音，数据保存到文件：", left_wav_filename, right_wav_filename)
+            # ========== Check keyboard input, use space to toggle recording state ==========
+            # if sys.stdin in ready_to_read:
+            #     key = sys.stdin.read(1)
+            #     if key == ' ':
+            #         recording = not recording
+            #         if recording:
+            #             print("Start recording...")
+            #         else:
+            #             print("Stop recording, data saved to files:", left_wav_filename, right_wav_filename)
 
-            # ========== 检查网络数据 ==========
+            # ========== Check network data ==========
             if conn in ready_to_read:
-                # 1) 先接收包头2字节，表示后续数据包总长度（网络字节序）
+                # 1) First receive 2-byte header, indicating total length of subsequent data packet (network byte order)
                 header = recv_all(conn, 2)
                 if header is None:
-                    print("连接关闭或读取包头失败")
+                    print("Connection closed or failed to read header")
                     break
                 packet_length, = struct.unpack("!H", header)
 
-                # 2) 接收该长度的完整数据包
+                # 2) Receive the complete data packet of that length
                 packet = recv_all(conn, packet_length)
                 if packet is None:
-                    print("连接关闭或读取数据包失败")
+                    print("Connection closed or failed to read data packet")
                     break
 
-                # === 根据ESP32的发送协议： 1025字节 = 1024字节音频 + 1字节计数器 ===
+                # === According to the ESP32 sending protocol: 1025 bytes = 1024 bytes of audio + 1 byte counter ===
                 if packet_length != 1025:
-                    print("收到异常长度的数据包：", packet_length)
-                    # 可以根据需求选择 continue 或 break
+                    print("Received abnormal-length data packet:", packet_length)
                     continue
                 else:
-                    # 拆分出音频数据(前1024字节)和计数器(最后1字节)
-                    audio_data = packet[:-1]  # 1024 字节音频
-                    counter = packet[-1]      # 计数器
+                    # Separate the audio data (first 1024 bytes) and the counter (last 1 byte)
+                    audio_data = packet[:-1]
+                    counter = packet[-1]
 
-                    # 如果正在录音，则打印包信息
-                    if recording:
-                        print("收到音频数据长度：", len(audio_data), "计数器：", counter)
+                    # If recording, print package information
+                    if running_event.is_set():
+                        # print("Received audio data length:", len(audio_data), "Counter:", counter)
                         if last_counter is not None and counter - last_counter != 1 and counter != 0:
-                            print("warning!!! we lost one package")
+                            print("Warning!!! we lost one package")
                         last_counter = counter
 
-                    # ========== 拆分左右声道 ==========
-                    # 此时 audio_data 每4个字节包含 (左声道16bit + 右声道16bit)
-                    # left_samples  就取  [0:2, 4:6, 8:10, ...]
-                    # right_samples 就取  [2:4, 6:8, 10:12, ...]
+                    # ========== Separate left and right channels ==========
+                    # Each 4 bytes in audio_data contain (left channel 16-bit + right channel 16-bit)
                     left_samples = b"".join(
                         [audio_data[i:i+2] for i in range(0, len(audio_data), 4)]
                     )
@@ -393,13 +394,53 @@ def record_WAV_wifi_1025():
                         [audio_data[i+2:i+4] for i in range(0, len(audio_data), 4)]
                     )
 
-                    # ========== 如果处于录音状态，则分别写入左右声道文件 ==========
-                    if recording:
+                    # ========== If recording, write to left and right channel files ==========
+                    if running_event.is_set():
                         wf_left.writeframes(left_samples)
                         wf_right.writeframes(right_samples)
 
+                       
+
+                    if running_event.is_set():
+                        left_buffer += left_samples #prepare for the whisper model
+                        right_buffer += right_samples
+
+                        # if len(left_buffer) >= 64000:
+                           
+                        #     chunk_left = left_buffer 
+                        #     chunk_right = right_buffer
+
+
+                        #     #transfer to numpy 
+                        #     chunk_left_narray = np.frombuffer(chunk_left, dtype=np.int16)
+
+                        #     data_queue.put(left_buffer)
+
+                            
+
+                        #     left_buffer = b''
+                        #     right_buffer = b''
+                        #     # print("clean the buffer")
+
+
+                        #classical microphone 
+                        if len(right_buffer) >= 64000:
+                           
+                           
+                            chunk_right = right_buffer
+
+
+                            #transfer to numpy 
+                            chunk_left_narray = np.frombuffer(chunk_right, dtype=np.int16)
+
+                            data_queue.put(right_buffer)
+
+                            
+
+                            right_buffer = b''
+                            # print("clean the buffer")
     except KeyboardInterrupt:
-        print("退出录音程序")
+        print("Exiting the recording program")
     finally:
         termios.tcsetattr(sys.stdin, termios.TCSADRAIN, old_settings)
         conn.close()
@@ -407,10 +448,141 @@ def record_WAV_wifi_1025():
         wf_left.close()
         wf_right.close()
 
+
+
+def whisper_real_time():
+    phrase_time = None
+    while True:
+        try:
+            now = datetime.utcnow()
+            # If the queue is not empty, grab the data from the queue
+            if not data_queue.empty():
+
+                phrase_complete = False
+                # Check if the waiting time is long enough for a new sentence 
+                if phrase_time and now - phrase_time > timedelta(seconds=phrase_timeout):
+                    phrase_complete = True
+                
+                # Update the time for when the most recent data is received
+                phrase_time = now
+                
+                # Combine audio data from queue
+                audio_data = b''.join(data_queue.queue)
+                data_queue.queue.clear()
+                
+                # Convert in-ram buffer to something the model can use
+                # Convert data from 16 bit wide integers to floating point with a width of 32 bits.
+                audio_np = np.frombuffer(audio_data, dtype=np.int16).astype(np.float32) / 32768.0
+
+                # Read the transcription.
+                result = audio_model.transcribe(audio_np, fp16=torch.cuda.is_available())
+                text = result['text'].strip()
+
+                # If we detected a pause between recordings, add a new item to our transcription.
+                # Otherwise edit the existing one.
+                if phrase_complete:
+                    transcription.append(text)
+                else:
+                    transcription[-1] = text
+
+                # Clear the console to reprint the updated transcription.
+                os.system('cls' if os.name=='nt' else 'clear') 
+                for line in transcription:
+                    print(line)
+                # Flush stdout.
+                print('', end='', flush=True)
+            else:
+                # Infinite loops are bad for processors, must sleep.
+                sleep(0.25)
+        except KeyboardInterrupt:
+            print("\n\nTranscription:")
+            for line in transcription:
+                print(line)
+            np.savetxt('strings.txt', transcription, fmt='%s')
+            break
+
+    print("\n\nTranscription:")
+    for line in transcription:
+        print(line)
+
+
+def keyboard_listener():
+ 
+    old_settings = termios.tcgetattr(sys.stdin)
+    tty.setcbreak(sys.stdin.fileno())
+
+    print("")
+    try:
+        while not exit_event.is_set():
+            c = sys.stdin.read(1)
+            if c == ' ':
+                # 切换 running_event 的状态
+                if running_event.is_set():
+                    running_event.clear()
+                    print("[keyboard_listener] >>> stopped")
+                else:
+                    running_event.set()
+                    print("[keyboard_listener] >>> started")
+
+    except (KeyboardInterrupt, EOFError):
+        pass
+    finally:
+        termios.tcsetattr(sys.stdin, termios.TCSADRAIN, old_settings)
+        print("[keyboard_listener] quite")
+
+        # 如果想在按 Ctrl+C 时让整个程序都退出，可以 set exit_event
+        exit_event.set()
+
+
 if __name__ == '__main__':
-    # main()
-    # PDM_receive()
-    # record_WAV_wifi()
-    # bag_513()
-    # record_WAV_wifi_513()
-    record_WAV_wifi_1025()
+    # # main()
+    # # PDM_receive()
+    # # record_WAV_wifi()
+    # # bag_513()
+    # # record_WAV_wifi_513()
+
+
+    """multi threading"""
+
+
+    #parameter setting 
+
+    running_event = threading.Event()  
+    exit_event = threading.Event()
+
+    audio_model = whisper.load_model("medium", download_root="/home/yuzhen/esp/PDM_microphone/wifi_multi_send")
+    phrase_timeout = 0
+    phrase_time = None
+    transcription = ['']
+    data_queue = Queue()
+
+    # # Cue the user that we're ready to go.
+    # print("Listening for WiFi audio and starting transcription...")
+    # thread = threading.Thread(target=record_WAV_wifi_1025)
+    # thread.start()
+
+    # whisper_real_time()
+
+
+    # record_WAV_wifi_1025()
+
+
+    whisper_thread = threading.Thread(target=whisper_real_time, daemon=True)
+    record_thread = threading.Thread(target=record_WAV_wifi_1025, daemon=True)
+    t_key     = threading.Thread(target=keyboard_listener, daemon=True)
+
+    whisper_thread.start()
+    record_thread.start()
+    t_key.start()
+
+    try:
+        whisper_thread.join()
+        record_thread.join()
+    except KeyboardInterrupt:
+        print("main thread capture key point interruption")
+
+
+
+    
+
+    
